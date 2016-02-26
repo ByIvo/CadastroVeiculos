@@ -32,20 +32,24 @@ module.exports = function(grunt) {
 		less: {
 			build: {
 				files: {
-					"css/<%= pkg.name%>.css": "css/less/*.less"
+					"public/css/<%= pkg.name%>.css": "public/css/less/*.less"
 				}
 			}
 		},
 
 		watch: {
-			build: {
-				files: ['src/**/*.html', 'src/img/*'],
-				tasks: ['build']
+			options: {
+				livereload: true
+			}, 
+			stylesheets: {
+				files: 'public/css/**/*.less',
+				tasks: ['clean:stylesheets', 'less:build']
+
 			},
 
-			stylesheets: {
-				files: 'src/css/**/*.less',
-				tasks: ['clean:stylesheets', 'less:build']
+			scripts: {
+				files: ['Gruntfile.js', 'public/js/**/*.js'],
+				tasks: ['jshint:build']
 			}
 		}
 	});
@@ -58,4 +62,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['less:build']);
 	grunt.registerTask('dist', ['clean:dist', 'less:build','copy:dist']);
-}
+	
+	};
