@@ -1,0 +1,8 @@
+#Dist files
+dist/
+
+#bower components
+public/vendor/
+
+#node modules
+node_modules/
