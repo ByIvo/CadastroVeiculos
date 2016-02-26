@@ -13,7 +13,7 @@
 ### Instalar dependências
 
 ```shell
-npm install
+sudo npm install && bower install
 ```
 
 ### Watch para mudanças
