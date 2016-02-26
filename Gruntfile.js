@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 		less: {
 			build: {
 				files: {
-					"css/<%= pkg.name%>.css": "css/**/*.less"
+					"css/<%= pkg.name%>.css": "css/less/*.less"
 				}
 			}
 		},
@@ -56,5 +56,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-less');
 
+	grunt.registerTask('default', ['less:build']);
 	grunt.registerTask('dist', ['clean:dist', 'less:build','copy:dist']);
 }
