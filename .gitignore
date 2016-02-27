@@ -6,3 +6,6 @@ public/vendor/
 
 #node modules
 node_modules/
+
+#Generated CSS
+public/css/*.css
