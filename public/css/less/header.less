@@ -1,0 +1,33 @@
+.header {
+	height: @altura-header;
+	background-color: @base-color;
+
+	.logo {
+		float: left;
+  		position: absolute;
+		margin-top: 14px;
+		margin-left: 41px;
+		width: 112px;
+		height: 18px;
+		background: url('../img/ca-logo.png') no-repeat;
+	}
+}
+
+body {
+	margin-top: @altura-header;
+}
+
+.ca-navbar {
+	min-height: @altura-header;
+	margin-bottom: @navbar-margin-bottom;
+}
+
+.ca-navbar-fixed-top {
+	top: 0;
+	border-width: 0 0 1px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+

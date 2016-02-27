@@ -1,0 +1,46 @@
+.ca-table {
+	width: auto;
+	height: auto;
+	border: 1px solid @border-normal;
+	border-radius: 5px 5px 0px 0px;
+
+
+	> table {
+		display: table;
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 20px;
+		border-color: @border-normal;
+		border-spacing: 0;
+		border-collapse: collapse;
+		white-space: normal;
+		line-height: normal;
+		font-weight: normal;
+		font-size: medium;
+		font-variant: normal;
+		font-style: normal;
+		text-align: start;
+
+		tr {
+			display: table-row;
+			vertical-align: inherit;
+
+			> td {
+				padding: 8px;
+				line-height: 1.42857143;
+				vertical-align: top;
+				border-top: 1px solid @border-normal;
+			}
+
+			>th {
+				padding: 8px;
+				line-height: 1.42857143;
+				vertical-align: top;
+			}
+		}
+
+		> tbody > tr:hover {
+			background-color: @item-hover;
+		}
+	}
+}
