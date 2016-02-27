@@ -1,3 +1,85 @@
-<div>
-	
+<nav class="ca-navbar ca-navbar-fixed-top">
+	<div class="ca-container header">
+		<span class="logo"></span>
+	</div>
+</nav>
+
+<div class="ca-container">
+	<div class="ca-block">
+		<div class="col-xs-2 text-left">
+			<a class="ca-btn ca-btn-primary" ng-click="teta()"> Novo Carro </a>
+		</div>
+
+		<div class="col-xs-2 text-left">
+			<a class="ca-btn ca-btn-delete" ng-click="teta()"> Excluir </a>
+		</div>
+
+		<div class="col-xs-offset-5 col-xs-3 text-right">
+			<div class="input-group pull-right">
+				<input type="text" class="form-control" placeholder="pesquisar">
+				<span class="input-group-btn">
+					<button class="ca-btn" type="button"><i class="glyphicon glyphicon-search"></i></button>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
+
+<div class="ca-container">
+	<div class="ca-block">
+		<div class="ca-table">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all"/>
+							<label for="chk-all"></label>
+						</th>
+
+						<th>Placa</th>
+						<th>Modelo</th>
+						<th>Marca</th>
+						<th>Foto</th>
+						<th>Combustível</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="carro in paginador.verPagina()">
+						<td>
+							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
+							<label for="chk-{{$index}}"></label>
+						</td>
+						<td>{{carro.placa}}</td>
+						<td>{{carro.modelo}}</td>
+						<td>{{carro.marca}}</td>
+						<td><a href="{{carro.imagem}}">Imagem</a></td>
+						<td>{{carro.combustivel}}</td>
+						<td>{{carro.valor | currency: 'R$'}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<nav>
+		<ul class="pagination">
+			<li class="ng-class:{'disabled': !paginador.hasAnterior() }">
+				<a aria-label="Previous" ng-disabled="!paginador.hasAnterior()" ng-click="paginador.anterior()">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+
+			<li><a ng-repeat="number in paginador.totalPaginasArray track by $index" ng-click="paginador.verPagina($index + 1)">{{$index + 1}}</a></li>
+
+			<li class="ng-class:{'disabled': !paginador.hasProximo() }">
+				<a aria-label="Next" ng-disabled="!paginador.hasProximo()" ng-click="paginador.proximo()">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+

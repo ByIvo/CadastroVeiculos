@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "proxima-nova-regular";
+  font-style: normal;
+  src: url("../fonts/proxima-nova/proximanova-regular.eot") format("embedded-opentype"), url("../fonts/proxima-nova/proximanova-regular.woff") format("woff"), url("../fonts/proxima-nova/proximanova-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "proxima-nova-cond";
+  font-style: normal;
+  src: url("../fonts/proxima-nova/proximanovacond-regular.eot") format("embedded-opentype"), url("../fonts/proxima-nova/proximanovacond-regular.woff") format("woff"), url("../fonts/proxima-nova/proximanovacond-regular.ttf") format("truetype");
+}
+* {
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  font-family: "proxima-nova-regular", sans-serif !important;
+  font-size: 14px;
+}
+@media (min-width: 1200px) {
+  .ca-container {
+    width: 1024px;
+  }
+}
+.ca-container {
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+}
+.ca-block {
+  padding-top: 20px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+.header {
+  height: 50px;
+  background-color: #2687E9;
+}
+.header .logo {
+  float: left;
+  position: absolute;
+  margin-top: 14px;
+  margin-left: 41px;
+  width: 112px;
+  height: 18px;
+  background: url('../img/ca-logo.png') no-repeat;
+}
+body {
+  margin-top: 50px;
+}
+.ca-navbar {
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+.ca-navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.ca-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c9d3dd;
+  border-radius: 3px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 1em;
+}
+.ca-btn-delete {
+  color: #385a7b;
+  background-color: #f8fafc;
+}
+.ca-btn-delete:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #385a7b;
+  text-decoration: none;
+}
+.ca-btn-primary {
+  background-color: #4aba58;
+  border: 1px solid #4aba58;
+  color: #FFF;
+}
+.ca-btn-primary:hover {
+  background-color: rgba(74, 186, 88, 0.8);
+  border: 1px solid #4aba58;
+  color: #FFF;
+  text-decoration: none;
+}
+.ca-btn-busca i {
+  before: "\e003";
+  font-family: 'Glyphicons Halflings';
+}
+input[type='checkbox'].ca-checkbox {
+  display: none;
+}
+input[type='checkbox'].ca-checkbox ~ label {
+  border: 1px solid #C9D3DD;
+  display: inline-block;
+}
+input[type='checkbox'].ca-checkbox:checked ~ label {
+  border-color: #8BC8F6;
+}
+input[type='checkbox'].ca-checkbox:checked ~ label:before {
+  content: "\e013";
+  font-family: 'Glyphicons Halflings';
+  color: #3B5C7C;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  border-color: #8BC8F6;
+}
+input[type='checkbox'].ca-checkbox-normal ~ label {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  line-height: 18px;
+  font-size: 0.8em;
+}
+input[type='checkbox'].ca-checkbox-grande ~ label {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  line-height: 28px;
+  font-size: 1em;
+}
+input[type='checkbox']:checked ~ label:before {
+  margin-left: -1px;
+}
+.ca-table {
+  width: auto;
+  height: auto;
+  border: 1px solid #C9D3DD;
+  border-radius: 5px 5px 0px 0px;
+}
+.ca-table > table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-color: #C9D3DD;
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-size: medium;
+  font-variant: normal;
+  font-style: normal;
+  text-align: start;
+}
+.ca-table > table tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+.ca-table > table tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #C9D3DD;
+}
+.ca-table > table tr > th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+}
+.ca-table > table > tbody > tr:hover {
+  background-color: #FFFAEB;
+}
