@@ -1,5 +1,5 @@
 ﻿angular.module('conta-azul').factory('CarroService',['$q', function($q) {
-	
+
 	var carros = [ 
 	{ 
 		'combustivel' : 'Flex', 
@@ -24,12 +24,85 @@
 		'modelo' : 'Fusca', 
 		'placa' : 'PAI4121', 
 		'valor' : '20000' 
-	} 
+	},
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'Gol', 
+		'placa' : 'FFF5498', 
+		'valor' : '20000' 
+	},
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A1', 
+		'placa' : 'CCC', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A2', 
+		'placa' : 'DDD', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A3', 
+		'placa' : 'EEE', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A4', 
+		'placa' : 'FFF', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A5', 
+		'placa' : 'GGG', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flex', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem', 
+		'modelo' : 'A6', 
+		'placa' : 'HHH', 
+		'valor' : '20000' 
+	}, 
+	{ 
+		'combustivel' : 'Flexs', 
+		'imagem' : null, 
+		'marca' : 'Volkswagem',
+		'modelo' : 'A7', 
+		'placa' : 'III',
+		'valor' : '20000' 
+	}
 	];
 
-	return {
+	var paginador = new Paginador(carros);
+
+	var carroService = {
 		all: function() {
 			return $q.when(carros);
+		},
+
+		paginador: function() {
+			return paginador;
 		}
 	};
+
+	return carroService;
+
 }]);

@@ -1,7 +1,5 @@
 angular.module('conta-azul').controller('CarroListagemController', 
-	['$scope', 'CarroService', '$location', function($scope, $location, CarroService) {
+	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
 
-		CarroService.all().then(function(carros) {
-			$scope.carros = carros;
-		});
+		$scope.paginador = CarroService.paginador();
 	}]);
