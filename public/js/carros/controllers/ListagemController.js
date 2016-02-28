@@ -14,6 +14,11 @@ angular.module('conta-azul').controller('CarroListagemController',
 			return $scope.selecionados.isTodosSelecionados(valoresPagina);
 		};
 
+		$scope.alternarSelecaoGrupo = function() {
+			var valoresPagina = $scope.paginador.verPagina();
+			return $scope.selecionados.alternarSelecaoGrupo(valoresPagina);
+		};
+
 		$scope.removerSelecionados = function() {
 			CarroService.removerSelecionados().then(function() {
 				$scope.paginador = CarroService.paginador();

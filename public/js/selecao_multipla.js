@@ -13,6 +13,14 @@ SelecaoMultipla.prototype.alternarSelecao = function(obj) {
 	}
 };
 
+SelecaoMultipla.prototype.alternarSelecaoGrupo = function(objetos) {
+	if(!this.isTodosSelecionados(objetos)) {
+		this.pushSome(objetos);
+	}else {
+		this.removeSome(objetos);
+	}
+};
+
 SelecaoMultipla.prototype.push = function(obj) {
 	if(!this.isSelecionado(obj)){
 		this.objetos[this.key(obj)] = obj;
