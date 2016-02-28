@@ -181,6 +181,9 @@ body {
   display: table-row;
   vertical-align: inherit;
 }
+.ca-table > table tr:hover {
+  background-color: #FFFAEB;
+}
 .ca-table > table tr td,
 .ca-table > table tr th {
   display: table-cell;
@@ -219,16 +222,22 @@ body {
 .ca-table > table > thead {
   line-height: 16px;
 }
-.ca-table > table > tr:hover {
-  background-color: #FFFAEB;
-}
-.ca-paginador {
-  text-align: center;
-}
-.ca-paginador a {
+.ca-paginador li a {
   width: 40px;
   height: 40px;
   padding: 10px 12px !important;
+  font-weight: 600;
+}
+.ca-paginador li a:hover {
+  z-index: 2;
+  background-color: #FFFAEB;
+  border-color: #C9D3DD;
+}
+.ca-paginador .ca-ativo a {
+  z-index: 3;
+  cursor: default;
+  background-color: #D8E9FB;
+  border-color: #8BC8F6;
 }
 input[type='checkbox'].ca-checkbox {
   display: none;

@@ -62,15 +62,19 @@
 		</div>
 	</div>
 
-	<nav class="ca-paginador">
-		<ul class="pagination">
+	<nav class="text-center">
+		<ul class="pagination ca-paginador">
 			<li class="ng-class:{'disabled': !paginador.hasAnterior() }">
 				<a aria-label="Previous" ng-disabled="!paginador.hasAnterior()" ng-click="paginador.anterior()">
 					<span aria-hidden="true">&laquo;</span>
 				</a>
 			</li>
 
-			<li><a ng-repeat="number in paginador.totalPaginasArray track by $index" ng-click="paginador.verPagina($index + 1)">{{$index + 1}}</a></li>
+			<li ng-repeat="number in paginador.totalPaginasArray track by $index" class="ng-class:{'ca-ativo': paginador.paginaAtual == ($index + 1) }">
+				<a ng-click="paginador.verPagina($index + 1)">
+					{{$index + 1}}
+				</a>
+			</li>
 
 			<li class="ng-class:{'disabled': !paginador.hasProximo() }">
 				<a aria-label="Next" ng-disabled="!paginador.hasProximo()" ng-click="paginador.proximo()">

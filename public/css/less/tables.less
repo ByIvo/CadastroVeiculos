@@ -59,6 +59,9 @@
 			display: table-row;
 			vertical-align: inherit;
 
+			&:hover {
+				background-color: @item-hover;
+			}
 
 			td, th {
 				display: table-cell;
@@ -103,18 +106,31 @@
 			line-height: 16px;
 		}
 
-		> tr:hover {
-			background-color: @item-hover;
-		}
 	}
 }
 
 .ca-paginador {
-	text-align: center;
 
-	a {
+	li a {
 		width: 40px;
 		height: 40px;
 		padding: 10px 12px !important;
+		font-weight: 600;
+
+		&:hover {
+			z-index: 2;
+			background-color: @item-hover;
+			border-color: @border-hover;
+		}
+	}
+
+	.ca-ativo {
+
+		a{
+			z-index: 3;
+			cursor: default;
+			background-color: @item-selected;
+			border-color: @border-selected;
+		}
 	}
 }
