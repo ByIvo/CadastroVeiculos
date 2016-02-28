@@ -209,6 +209,7 @@ table.ca-table tr th {
   font-size: 14px;
   text-align: left;
   padding: 10px;
+  cursor: pointer;
 }
 table.ca-table tr td:not(:first-child),
 table.ca-table tr th:not(:first-child) {
@@ -233,7 +234,6 @@ table.ca-table tr > td {
   overflow: hidden;
   text-overflow: ellipsis !important;
   white-space: nowrap;
-  cursor: pointer;
 }
 table.ca-table tr > th {
   background-color: #F8FAFC;

@@ -1,7 +1,19 @@
 angular.module('conta-azul').controller('CarroListagemController', 
 	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
 
-		$scope.paginador = CarroService.paginador();
+		$scope.campoOrdenacao = '';
+		$scope.desc = false;
+		$scope.filtrar = '';
+		$scope.carrosExibidos = [];
+
+		$scope.ordenar = function(campo) {
+			$scope.campoOrdenacao = campo;
+			$scope.desc = !$scope.desc;
+		};
+
+		CarroService.all().then(function(carros) {
+			$scope.carros = carros;
+		});
 
 		$scope.selecionados = CarroService.selecionados();
 
@@ -10,18 +22,16 @@ angular.module('conta-azul').controller('CarroListagemController',
 		};
 
 		$scope.isTodosSelecionados = function() {
-			var valoresPagina = $scope.paginador.verPagina();
-			return $scope.selecionados.isTodosSelecionados(valoresPagina);
+			return $scope.selecionados.isTodosSelecionados($scope.carrosExibidos);
 		};
 
 		$scope.alternarSelecaoGrupo = function() {
-			var valoresPagina = $scope.paginador.verPagina();
-			return $scope.selecionados.alternarSelecaoGrupo(valoresPagina);
+			return $scope.selecionados.alternarSelecaoGrupo($scope.carrosExibidos);
 		};
 
 		$scope.removerSelecionados = function() {
-			CarroService.removerSelecionados().then(function() {
-				$scope.paginador = CarroService.paginador();
+			CarroService.removerSelecionados().then(function(carroRestantes){
+				$scope.carros = carroRestantes;
 			});
 		};
 

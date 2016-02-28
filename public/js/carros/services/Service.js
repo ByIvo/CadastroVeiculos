@@ -91,7 +91,6 @@
 	}
 	];
 
-	var funcPaginador = new Paginador(carros);
 	var selecionados = new SelecaoMultipla(function(carro){return carro.placa;});
 
 	var carroService = {
@@ -99,12 +98,7 @@
 			return $q.when(carros);
 		},
 
-		paginador: function() {
-			return funcPaginador;
-		},
-
 		selecionados: function() {
-			console.log(selecionados);
 			return selecionados;
 		},
 
@@ -118,9 +112,9 @@
 			});
 
 			carros = carrosRestantes;
-			funcPaginador = new Paginador(carrosRestantes);
 			selecionados.limpar();
-			return $q.when({});
+			
+			return $q.when(carros);
 		}
 	};
 

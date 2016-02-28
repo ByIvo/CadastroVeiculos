@@ -4,7 +4,7 @@ var Helper = {
 	}
 };
 
-angular.module('conta-azul', ['ngRoute']).config(['$routeProvider', function($routeProvider) {
+angular.module('conta-azul', ['ngRoute', 'angularUtils.directives.dirPagination']).config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.when('/carros', {
 		templateUrl: 'partials/listar_carros.html',
@@ -16,23 +16,3 @@ angular.module('conta-azul', ['ngRoute']).config(['$routeProvider', function($ro
 		controller: 'CarroController'
 	});
 }]);
-
-_.mixin({
-	filtrarCarros: function(carros, filtro) {
-		if(!filtro) {
-			return [];
-		}
-
-		return _.filter(carros, function(carro) {
-			return carro.combustivel.contains(filtro) || carro.marca.contains(filtro);
-		});
-	}
-});
-
-_.mixin({
-	buscarCarro: function(carros, carro) {
-		return _.filter(carros, function(carroTest) {
-			return Helper.isCarroIgual(carroTest, carro);
-		});
-	}
-});

@@ -16,7 +16,7 @@
 
 		<div class="col-xs-offset-5 col-xs-3 text-right ca-padding-borda-direita-padrao ca-input-group">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Pesquisar"/>
+				<input type="text" ng-model="filtrar" class="form-control" placeholder="Pesquisar"/>
 				<span class="input-group-btn">
 					<button class="ca-btn btn ca-btn-default ca-btn-busca" type="button"><span></span></button>
 				</span>
@@ -34,17 +34,19 @@
 						<input ng-click="alternarSelecaoGrupo()" ng-checked="isTodosSelecionados()" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all"/>
 						<label for="chk-all"></label>
 					</th>
-					<th>Placa</th>
-					<th>Modelo</th>
-					<th>Marca</th>
+					<th ng-click="ordenar('placa')">
+						Placa
+					</th>
+					<th ng-click="ordenar('modelo')">Modelo</th>
+					<th ng-click="ordenar('marca')">Marca</th>
 					<th>Foto</th>
-					<th>Combustível</th>
-					<th class="ca-alinha-celula-direita">Valor</th>
+					<th ng-click="ordenar('combustivel')">Combustível</th>
+					<th ng-click="ordenar('valor')" class="ca-alinha-celula-direita">Valor</th>
 				</tr>
 			</thead>
-
 			<tbody>
-				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" ng-repeat="carro in paginador.verPagina()">
+				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" 
+					dir-paginate="carro in (carrosExibidos = (carros | carroFiltro:filtrar:'marca':'combustivel' | orderBy:campoOrdenacao:desc | itemsPerPage: 5))">
 					<td>
 						<input ng-checked="selecionados.isSelecionado(carro)" ng-click="selecionados.alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
 						<label for="chk-{{$index}}"></label>
@@ -64,25 +66,11 @@
 	</div>
 
 	<nav class="text-center">
-		<ul class="pagination ca-paginador">
-			<li class="ng-class:{'disabled': !paginador.hasAnterior() }">
-				<a aria-label="Previous" ng-disabled="!paginador.hasAnterior()" ng-click="paginador.anterior()">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-
-			<li ng-repeat="number in paginador.totalPaginasArray track by $index" class="ng-class:{'ca-ativo': paginador.paginaAtual == ($index + 1) }">
-				<a ng-click="paginador.verPagina($index + 1)">
-					{{$index + 1}}
-				</a>
-			</li>
-
-			<li class="ng-class:{'disabled': !paginador.hasProximo() }">
-				<a aria-label="Next" ng-disabled="!paginador.hasProximo()" ng-click="paginador.proximo()">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
+		<dir-pagination-controls
+		max-size="5"
+		direction-links="true"
+		template-url="partials/pagination.tpl.html" >
+	</dir-pagination-controls>
+</nav>
 </div>
 
