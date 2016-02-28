@@ -2,15 +2,48 @@
 	width: auto;
 	height: auto;
 	border: 1px solid @border-normal;
-	border-radius: 5px 5px 0px 0px;
+	border-radius: 3px 3px 0px 0px;
 
+	.ca-col-opcoes {
+		.ca-col-x(45px);
+	}
+
+	.ca-col-placa {
+		.ca-col-x(160px);
+	}
+
+	.ca-col-modelo {
+		.ca-col-x(140px);
+	}
+
+	.ca-col-marca {
+		.ca-col-x(175px);
+	}
+
+	.ca-col-foto {
+		.ca-col-x(150px);
+	}
+
+	.ca-col-combustivel {
+		.ca-col-x(140px);
+	}
+
+	.ca-col-x(@size) {
+		width: @size;
+		max-width: @size;
+	}
+
+	.ca-alinha-celula-direita {
+		text-align: right;
+	}
 
 	> table {
 		display: table;
 		width: 100%;
 		max-width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 		border-color: @border-normal;
+		border-spacing: 0;
 		border-spacing: 0;
 		border-collapse: collapse;
 		white-space: normal;
@@ -20,27 +53,68 @@
 		font-variant: normal;
 		font-style: normal;
 		text-align: start;
+		border-spacing: 2px;
 
 		tr {
 			display: table-row;
 			vertical-align: inherit;
 
-			> td {
-				padding: 8px;
+
+			td, th {
+				display: table-cell;
+				vertical-align: middle;
+				vertical-align: inherit;
 				line-height: 1.42857143;
-				vertical-align: top;
-				border-top: 1px solid @border-normal;
+				font-size: 14px;
+				text-align: left;
+
+				&:not(:first-child) {
+					padding-left: 0px;
+				}
+
+				&:last-child {
+					padding-right: 40px;
+				}
+
 			}
 
-			>th {
-				padding: 8px;
-				line-height: 1.42857143;
-				vertical-align: top;
+			> td {
+				border-top: 1px solid @border-normal;
+				height: 50px;
+				overflow: hidden;
+				text-overflow: ellipsis !important;
+				white-space: nowrap;
+				cursor: pointer;
+			}
+
+			> th {
+				background-color: @table-header;
+				height: 40px;
+				display: table-cell;
+				vertical-align: inherit;
+				margin-bottom: 0px;
+				border: 0px;
+				max-width: none;
+				font-weight: 600;
 			}
 		}
 
-		> tbody > tr:hover {
+		> thead {
+			line-height: 16px;
+		}
+
+		> tr:hover {
 			background-color: @item-hover;
 		}
+	}
+}
+
+.ca-paginador {
+	text-align: center;
+
+	a {
+		width: 40px;
+		height: 40px;
+		padding: 10px 12px !important;
 	}
 }

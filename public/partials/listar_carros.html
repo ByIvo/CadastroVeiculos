@@ -6,19 +6,19 @@
 
 <div class="ca-container">
 	<div class="ca-block">
-		<div class="col-xs-2 text-left">
+		<div class="col-xs-2 text-left ca-padding-borda-esquerda">
 			<a class="ca-btn ca-btn-primary" ng-click="teta()"> Novo Carro </a>
 		</div>
 
-		<div class="col-xs-2 text-left">
-			<a class="ca-btn ca-btn-delete" ng-click="teta()"> Excluir </a>
+		<div class="col-xs-2 text-left ca-padding">
+			<a class="ca-btn ca-btn-default" ng-click="teta()"> Excluir </a>
 		</div>
 
-		<div class="col-xs-offset-5 col-xs-3 text-right">
-			<div class="input-group pull-right">
-				<input type="text" class="form-control" placeholder="pesquisar">
+		<div class="col-xs-offset-5 col-xs-3 text-right ca-padding-borda-direita-padrao ca-input-group">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Pesquisar"/>
 				<span class="input-group-btn">
-					<button class="ca-btn" type="button"><i class="glyphicon glyphicon-search"></i></button>
+					<button class="ca-btn btn ca-btn-default ca-btn-busca" type="button"><span></span></button>
 				</span>
 			</div>
 		</div>
@@ -31,17 +31,16 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>
+						<th class="ca-col-opcoes">
 							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all"/>
 							<label for="chk-all"></label>
 						</th>
-
 						<th>Placa</th>
 						<th>Modelo</th>
 						<th>Marca</th>
 						<th>Foto</th>
 						<th>Combustível</th>
-						<th>Valor</th>
+						<th class="ca-alinha-celula-direita">Valor</th>
 					</tr>
 				</thead>
 
@@ -51,19 +50,19 @@
 							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
 							<label for="chk-{{$index}}"></label>
 						</td>
-						<td>{{carro.placa}}</td>
-						<td>{{carro.modelo}}</td>
-						<td>{{carro.marca}}</td>
-						<td><a href="{{carro.imagem}}">Imagem</a></td>
-						<td>{{carro.combustivel}}</td>
-						<td>{{carro.valor | currency: 'R$'}}</td>
+						<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
+						<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
+						<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
+						<td class="ca-col-foto"><a href="{{carro.imagem}}">Imagem</a></td>
+						<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
+						<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: 'R$'}}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 
-	<nav>
+	<nav class="ca-paginador">
 		<ul class="pagination">
 			<li class="ng-class:{'disabled': !paginador.hasAnterior() }">
 				<a aria-label="Previous" ng-disabled="!paginador.hasAnterior()" ng-click="paginador.anterior()">

@@ -1,48 +1,52 @@
-input[type='checkbox'] {
+input {
+  
+  &[type='checkbox']{  
+   &.ca-checkbox {
+     display: none;
 
-  &.ca-checkbox {
-   display: none;
+     ~ label  {
+      border: 1px solid @border-normal;
+      display: inline-block;
+      margin-bottom: 0px;
+      background-color: @white;
+    }
 
-   ~ label  {
-    border: 1px solid @border-normal;
-    display: inline-block;
+    &:checked ~ label  {
+      border-color: @border-selected;
+    }
+
+    &:checked ~ label:before  {
+      content: "\e013";
+      font-family: @glyph-fonts;
+      color: @warning-color;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: inline-block;
+      border-color: @border-selected;
+    }
   }
 
-  &:checked ~ label  {
-    border-color: @border-selected;
+  &.ca-checkbox-normal ~ label {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin: 0px;
+    line-height: 18px;
+    font-size: 0.8em;
+  }
+
+  &.ca-checkbox-grande ~ label {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    line-height: 28px;
+    font-size: 1em;
   }
 
   &:checked ~ label:before  {
-    content: "\e013";
-    font-family: @glyph-fonts;
-    color: #3B5C7C;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    display: inline-block;
-    border-color: @border-selected;
+    margin-left: -1px;
   }
+
 }
-
-&.ca-checkbox-normal ~ label {
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  line-height: 18px;
-  font-size: 0.8em;
-}
-
-&.ca-checkbox-grande ~ label {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  line-height: 28px;
-  font-size: 1em;
-}
-
-&:checked ~ label:before  {
-  margin-left: -1px;
-}
-
-
 }

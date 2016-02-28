@@ -15,6 +15,9 @@
   font-family: "proxima-nova-regular", sans-serif !important;
   font-size: 14px;
 }
+body {
+  color: #385a7b;
+}
 @media (min-width: 1200px) {
   .ca-container {
     width: 1024px;
@@ -23,12 +26,28 @@
 .ca-container {
   margin-left: auto;
   margin-right: auto;
-  float: left;
+  clear: both;
 }
 .ca-block {
   padding-top: 20px;
   margin-left: 45px;
   margin-right: 45px;
+}
+.ca-padding {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+.ca-padding-borda-esquerda {
+  padding-left: 0px;
+  padding-right: 0.9375rem;
+}
+.ca-padding-borda-direita {
+  padding-left: 0.9375rem;
+  padding-right: 0px;
+}
+.ca-padding-borda-direita-padrao {
+  padding-left: 15px;
+  padding-right: 0px;
 }
 .header {
   height: 50px;
@@ -59,6 +78,7 @@ body {
   z-index: 1030;
 }
 .ca-btn {
+  width: 140px;
   border-width: 1px;
   border-style: solid;
   border-color: #c9d3dd;
@@ -73,11 +93,11 @@ body {
   cursor: pointer;
   line-height: 1em;
 }
-.ca-btn-delete {
+.ca-btn-default {
   color: #385a7b;
   background-color: #f8fafc;
 }
-.ca-btn-delete:hover {
+.ca-btn-default:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: #385a7b;
   text-decoration: none;
@@ -93,9 +113,122 @@ body {
   color: #FFF;
   text-decoration: none;
 }
-.ca-btn-busca i {
-  before: "\e003";
+.ca-btn-busca span:before {
+  content: "\e003";
   font-family: 'Glyphicons Halflings';
+}
+.ca-input-group input {
+  height: 40px;
+  border: 1px solid #c9d3dd;
+  border-radius: 3px;
+}
+.ca-input-group button {
+  padding: 9px 12px;
+  width: auto;
+  line-height: 1.42857143em;
+}
+.ca-table {
+  width: auto;
+  height: auto;
+  border: 1px solid #C9D3DD;
+  border-radius: 3px 3px 0px 0px;
+}
+.ca-table .ca-col-opcoes {
+  width: 45px;
+  max-width: 45px;
+}
+.ca-table .ca-col-placa {
+  width: 160px;
+  max-width: 160px;
+}
+.ca-table .ca-col-modelo {
+  width: 140px;
+  max-width: 140px;
+}
+.ca-table .ca-col-marca {
+  width: 175px;
+  max-width: 175px;
+}
+.ca-table .ca-col-foto {
+  width: 150px;
+  max-width: 150px;
+}
+.ca-table .ca-col-combustivel {
+  width: 140px;
+  max-width: 140px;
+}
+.ca-table .ca-alinha-celula-direita {
+  text-align: right;
+}
+.ca-table > table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0px;
+  border-color: #C9D3DD;
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-size: medium;
+  font-variant: normal;
+  font-style: normal;
+  text-align: start;
+  border-spacing: 2px;
+}
+.ca-table > table tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+.ca-table > table tr td,
+.ca-table > table tr th {
+  display: table-cell;
+  vertical-align: middle;
+  vertical-align: inherit;
+  line-height: 1.42857143;
+  font-size: 14px;
+  text-align: left;
+}
+.ca-table > table tr td:not(:first-child),
+.ca-table > table tr th:not(:first-child) {
+  padding-left: 0px;
+}
+.ca-table > table tr td:last-child,
+.ca-table > table tr th:last-child {
+  padding-right: 40px;
+}
+.ca-table > table tr > td {
+  border-top: 1px solid #C9D3DD;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ca-table > table tr > th {
+  background-color: #F8FAFC;
+  height: 40px;
+  display: table-cell;
+  vertical-align: inherit;
+  margin-bottom: 0px;
+  border: 0px;
+  max-width: none;
+  font-weight: 600;
+}
+.ca-table > table > thead {
+  line-height: 16px;
+}
+.ca-table > table > tr:hover {
+  background-color: #FFFAEB;
+}
+.ca-paginador {
+  text-align: center;
+}
+.ca-paginador a {
+  width: 40px;
+  height: 40px;
+  padding: 10px 12px !important;
 }
 input[type='checkbox'].ca-checkbox {
   display: none;
@@ -103,6 +236,8 @@ input[type='checkbox'].ca-checkbox {
 input[type='checkbox'].ca-checkbox ~ label {
   border: 1px solid #C9D3DD;
   display: inline-block;
+  margin-bottom: 0px;
+  background-color: #FFF;
 }
 input[type='checkbox'].ca-checkbox:checked ~ label {
   border-color: #8BC8F6;
@@ -110,7 +245,7 @@ input[type='checkbox'].ca-checkbox:checked ~ label {
 input[type='checkbox'].ca-checkbox:checked ~ label:before {
   content: "\e013";
   font-family: 'Glyphicons Halflings';
-  color: #3B5C7C;
+  color: #385a7b;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -121,6 +256,7 @@ input[type='checkbox'].ca-checkbox-normal ~ label {
   width: 20px;
   height: 20px;
   border-radius: 3px;
+  margin: 0px;
   line-height: 18px;
   font-size: 0.8em;
 }
@@ -133,44 +269,4 @@ input[type='checkbox'].ca-checkbox-grande ~ label {
 }
 input[type='checkbox']:checked ~ label:before {
   margin-left: -1px;
-}
-.ca-table {
-  width: auto;
-  height: auto;
-  border: 1px solid #C9D3DD;
-  border-radius: 5px 5px 0px 0px;
-}
-.ca-table > table {
-  display: table;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-color: #C9D3DD;
-  border-spacing: 0;
-  border-collapse: collapse;
-  white-space: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-size: medium;
-  font-variant: normal;
-  font-style: normal;
-  text-align: start;
-}
-.ca-table > table tr {
-  display: table-row;
-  vertical-align: inherit;
-}
-.ca-table > table tr > td {
-  padding: 8px;
-  line-height: 1.42857143;
-  vertical-align: top;
-  border-top: 1px solid #C9D3DD;
-}
-.ca-table > table tr > th {
-  padding: 8px;
-  line-height: 1.42857143;
-  vertical-align: top;
-}
-.ca-table > table > tbody > tr:hover {
-  background-color: #FFFAEB;
 }
