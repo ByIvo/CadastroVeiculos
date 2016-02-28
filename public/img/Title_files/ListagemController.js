@@ -1,7 +1,7 @@
 angular.module('conta-azul').controller('CarroListagemController', 
 	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
 
-		$scope.paginador = CarroService.paginador();
+		$scope.paginador = CarroService.paginador;
 
 		$scope.selecionados = CarroService.selecionados();
 
@@ -15,9 +15,7 @@ angular.module('conta-azul').controller('CarroListagemController',
 		};
 
 		$scope.removerSelecionados = function() {
-			CarroService.removerSelecionados().then(function() {
-				$scope.paginador = CarroService.paginador();
-			});
+			CarroService.removerSelecionados();
 		};
 
 	}]);

@@ -1,0 +1,95 @@
+
+<!-- saved from url=(0030)http://127.0.0.1:8080/#/carros -->
+<html ng-app="conta-azul" class="ng-scope" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		<title>Title</title>
+		<link href="./Title_files/glyphicons-halflings-regular.ttf" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="./Title_files/bootstrap.css" type="text/css">
+		<link rel="stylesheet" href="./Title_files/bootstrap-theme.css" type="text/css">
+		<link rel="stylesheet" href="./Title_files/testecontaazul.css" type="text/css">
+	</head>
+	<body class="ca-container">
+		 <!-- ngView: undefined --><ng-view class="ng-scope"><nav class="ca-navbar ca-navbar-fixed-top ng-scope">
+	<div class="ca-container header">
+		<span class="logo"></span>
+	</div>
+</nav>
+
+<div class="ca-container ng-scope">
+	<div class="ca-block">
+		<div class="col-xs-2 text-left ca-padding-borda-esquerda">
+			<a class="ca-btn ca-btn-primary" ng-click="teta()"> Novo Carro </a>
+		</div>
+
+		<div class="col-xs-2 text-left ca-padding">
+			<a class="ca-btn ca-btn-default" ng-click="removerSelecionados()"> Excluir </a>
+		</div>
+
+		<div class="col-xs-offset-5 col-xs-3 text-right ca-padding-borda-direita-padrao ca-input-group">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Pesquisar">
+				<span class="input-group-btn">
+					<button class="ca-btn btn ca-btn-default ca-btn-busca" type="button"><span></span></button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ca-container ng-scope">
+	<div class="ca-block">
+		<table class="ca-table table-hover">
+			<thead>
+				<tr>
+					<th class="ca-col-opcoes">
+						<input ng-checked="isTodosSelecionados()" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all">
+						<label for="chk-all"></label>
+					</th>
+					<th>Placa</th>
+					<th>Modelo</th>
+					<th>Marca</th>
+					<th>Foto</th>
+					<th>Combustível</th>
+					<th class="ca-alinha-celula-direita">Valor</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<!-- ngRepeat: carro in paginador.verPagina() -->
+			</tbody>
+		</table>
+	</div>
+
+	<nav class="text-center">
+		<ul class="pagination ca-paginador">
+			<li class="ng-class:{&#39;disabled&#39;: !paginador.hasAnterior() } disabled">
+				<a aria-label="Previous" ng-disabled="!paginador.hasAnterior()" ng-click="paginador.anterior()" disabled="disabled">
+					<span aria-hidden="true">«</span>
+				</a>
+			</li>
+
+			<!-- ngRepeat: number in paginador.totalPaginasArray track by $index -->
+
+			<li class="ng-class:{&#39;disabled&#39;: !paginador.hasProximo() } disabled">
+				<a aria-label="Next" ng-disabled="!paginador.hasProximo()" ng-click="paginador.proximo()" disabled="disabled">
+					<span aria-hidden="true">»</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+</ng-view>
+		 <script src="./Title_files/angular.js" type="text/javascript"></script>
+		 <script src="./Title_files/angular-locale_pt-br.js" type="text/javascript"></script>
+		 <script src="./Title_files/angular-route.js" type="text/javascript"></script>
+		 <script src="./Title_files/underscore-min.js" type="text/javascript"></script>
+		 <script src="./Title_files/paginador.js" type="text/javascript"></script>
+		 <script src="./Title_files/selecao_multipla.js" type="text/javascript"></script>
+		 <script src="./Title_files/main.js" type="text/javascript"></script>
+		 <script src="./Title_files/Controller.js" type="text/javascript"></script>
+		 <script src="./Title_files/ListagemController.js" type="text/javascript"></script>
+		 <script src="./Title_files/Service.js" type="text/javascript"></script>
+	
+
+</body></html>

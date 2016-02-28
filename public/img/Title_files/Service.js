@@ -91,7 +91,7 @@
 	}
 	];
 
-	var funcPaginador = new Paginador(carros);
+	var paginador = new Paginador(carros);
 	var selecionados = new SelecaoMultipla(function(carro){return carro.placa;});
 
 	var carroService = {
@@ -100,7 +100,7 @@
 		},
 
 		paginador: function() {
-			return funcPaginador;
+			return paginador;
 		},
 
 		selecionados: function() {
@@ -111,16 +111,15 @@
 		removerSelecionados: function() {
 			var carrosSelecionados = selecionados.objetos;
 
-			var carrosRestantes = _.reject(carros, function(carro) {
+			var carrosRestantes = _.reject(paginador.array, function(carro) {
 				return _.some(carrosSelecionados, function(carroSelecionado){
 					return Helper.isCarroIgual(carroSelecionado, carro);
 				});
 			});
 
 			carros = carrosRestantes;
-			funcPaginador = new Paginador(carrosRestantes);
+			paginador = paginador.atualizarValores(carrosRestantes);
 			selecionados.limpar();
-			return $q.when({});
 		}
 	};
 

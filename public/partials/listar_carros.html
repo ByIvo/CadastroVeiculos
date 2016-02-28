@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="col-xs-2 text-left ca-padding">
-			<a class="ca-btn ca-btn-default" ng-click="teta()"> Excluir </a>
+			<a class="ca-btn ca-btn-default" ng-click="removerSelecionados()"> Excluir </a>
 		</div>
 
 		<div class="col-xs-offset-5 col-xs-3 text-right ca-padding-borda-direita-padrao ca-input-group">
@@ -27,39 +27,40 @@
 
 <div class="ca-container">
 	<div class="ca-block">
-		<div class="ca-table">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th class="ca-col-opcoes">
-							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all"/>
-							<label for="chk-all"></label>
-						</th>
-						<th>Placa</th>
-						<th>Modelo</th>
-						<th>Marca</th>
-						<th>Foto</th>
-						<th>Combustível</th>
-						<th class="ca-alinha-celula-direita">Valor</th>
-					</tr>
-				</thead>
+		<table class="ca-table table-hover">
+			<thead>
+				<tr>
+					<th class="ca-col-opcoes">
+						<input ng-checked="isTodosSelecionados()" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-all"/>
+						<label for="chk-all"></label>
+					</th>
+					<th>Placa</th>
+					<th>Modelo</th>
+					<th>Marca</th>
+					<th>Foto</th>
+					<th>Combustível</th>
+					<th class="ca-alinha-celula-direita">Valor</th>
+				</tr>
+			</thead>
 
-				<tbody>
-					<tr ng-repeat="carro in paginador.verPagina()">
-						<td>
-							<input type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
-							<label for="chk-{{$index}}"></label>
-						</td>
-						<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
-						<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
-						<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
-						<td class="ca-col-foto"><a href="{{carro.imagem}}">Imagem</a></td>
-						<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
-						<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: 'R$'}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+			<tbody>
+				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" ng-repeat="carro in paginador.verPagina()">
+					<td>
+						<input ng-checked="selecionados.isSelecionado(carro)" ng-click="selecionados.alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
+						<label for="chk-{{$index}}"></label>
+					</td>
+					<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
+					<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
+					<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
+					<td ng-if="!carro.imagem" class="ca-col-foto">
+						<a href="{{carro.imagem}}">Imagem</a>
+					</td>
+					<td ng-if="carro.imagem" class="ca-col-foto">Sem foto</td>
+					<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
+					<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: ''}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<nav class="text-center">
@@ -83,6 +84,5 @@
 			</li>
 		</ul>
 	</nav>
-</div>
 </div>
 

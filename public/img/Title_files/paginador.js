@@ -2,12 +2,11 @@ function Paginador(array, numItens) {
 	if (!array) throw new Error('Informe o array!');
 	if (!(array instanceof Array)) throw new Error('Somente arrays são aceitos!');
 
-	this.array  = array;
 	this.atualizarValores(array, numItens);
 }
 
 Paginador.prototype.atualizarValores = function(array, numItens) {
-	//this.array = this.array.concat(array);
+	this.array = array;
 	this.numItens = numItens || 5;
 	this.paginaAtual = 1;
 	this.totalPaginas= Math.ceil(this.array.length / this.numItens);
