@@ -1,0 +1,116 @@
+.ca-breadcrumb {
+	padding: 0px;
+	margin-bottom: 20px;
+	list-style: none;
+	margin-top: 0;
+	background-color: transparent;
+
+	a {
+		color: @link-normal;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+	.ca-ativo {
+		color: @form-text;
+		cursor: default;
+	}
+}
+
+h5 {
+	&.ca-page-title {
+		text-transform: UPPERCASE;
+		border-bottom: 1px solid @border-normal;
+	}
+}
+
+.ca-form {
+	margin-top: 20px;
+
+	.ca-required {
+
+		label {
+			&:after {
+				content: '*';
+			}
+		}
+	}
+
+	@media (min-width: 480px) {
+		.ca-botao-form {
+			padding-right: 28px
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.ca-botao-form-direita {
+			padding-right: 40px;
+		}
+	}
+
+
+	a, button {
+		width: 100%;
+		margin-top: 10px;
+	}
+	
+	label {
+		display: block;
+		font-size: 13px !important;
+		line-height: 20px;
+		font-weight: normal;
+		margin-bottom: 0px;
+	}
+
+	span.ca-message {
+		color: @text-invalid;
+		font-size: 12px;
+		position: absolute;
+		margin-top: -20px;
+	}
+
+	select, input {
+		padding: 10px 16px;
+		box-shadow: none;
+		font-size: 14px;
+		display: block;
+		background-color: @white;
+		border: 1px solid @border-normal;
+		transition: border linear 0.2s, box-shadow linear 0.2s;
+		height: 20px;
+		margin-bottom: 20px;
+		line-height: 20px;
+		color: @form-text;
+		border-radius: 3px;
+		font-weight: normal;
+		width: 90% !important;
+		max-width: 90%;
+		box-sizing: content-box;
+
+		&:focus {
+			box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+			border-color: rgba(82,168,236,0.6);
+			outline: 0;
+
+			&.ca-valid {
+				border: 1px solid @primary-color;
+				box-shadow: 0 0 6px @primary-color-hover;
+			}
+		}
+
+		&.ca-invalid {
+			border: 1px solid @border-invalid;
+			box-shadow: 0 0 6px @shadow-invalid;
+			color: @text-invalid;
+		}
+	} 
+
+
+	input {
+		margin-left: 0;
+		vertical-align: middle;
+		box-sizing: content-box;
+
+	}
+	
+}

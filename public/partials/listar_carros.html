@@ -1,20 +1,16 @@
-<nav class="ca-navbar ca-navbar-fixed-top">
-	<div class="ca-container header">
-		<span class="logo"></span>
-	</div>
-</nav>
+<header-directive></header-directive>
 
 <div class="ca-container">
 	<div class="ca-block">
-		<div class="col-xs-2 text-left ca-padding-borda-esquerda">
-			<a class="ca-btn ca-btn-primary" ng-click="teta()"> Novo Carro </a>
+		<div class="col-lg-2 col-xs-3 col-md-2 text-left ca-padding-borda-esquerda">
+			<a class="ca-btn ca-btn-primary" href="#/carros/novo"> Novo Carro </a>
 		</div>
 
-		<div class="col-xs-2 text-left ca-padding">
+		<div class="col-lg-2 col-xs-3 col-md-2 text-left ca-padding">
 			<a class="ca-btn ca-btn-default" ng-click="removerSelecionados()"> Excluir </a>
 		</div>
 
-		<div class="col-xs-offset-5 col-xs-3 text-right ca-padding-borda-direita-padrao ca-input-group">
+		<div class="col-lg-offset-5 col-lg-3 col-xs-offset-1 col-xs-5 col-md-offset-1 col-md-7 text-right ca-padding-borda-direita-padrao ca-input-group">
 			<div class="input-group">
 				<input type="text" ng-model="filtrar" class="form-control" placeholder="Pesquisar"/>
 				<span class="input-group-btn">

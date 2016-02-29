@@ -114,7 +114,7 @@
 			carros = carrosRestantes;
 			selecionados.limpar();
 			
-			return $q.when(carros);
+			return this.all();
 		}
 	};
 
