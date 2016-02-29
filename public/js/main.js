@@ -11,8 +11,17 @@ angular.module('conta-azul', ['ngRoute', 'angularUtils.directives.dirPagination'
 		controller: 'CarroListagemController'
 	});
 
+	$routeProvider.when('/carros/novo/:placaCarro/editar', {
+		templateUrl: 'partials/form_carro.html',
+		controller: 'CarroController'
+	});
+
 	$routeProvider.when('/carros/novo', {
 		templateUrl: 'partials/form_carro.html',
 		controller: 'CarroController'
+	});
+
+	$routeProvider.otherwise({
+		redirectTo: '/carros'
 	});
 }]);
