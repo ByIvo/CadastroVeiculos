@@ -11,22 +11,12 @@ app.controller('CarroListagemController',
 			$scope.desc = !$scope.desc;
 		};
 
+		/*BUSCAR CARROS*/
 		CarroService.all().then(function(carros) {
 			$scope.carros = carros;
 		});
 
-		$scope.isSelecionado = function(carro) {
-			return SelecaoService.isSelecionado(carro);
-		};
-
-		$scope.isTodosSelecionados = function() {
-			return SelecaoService.isTodosSelecionados($scope.carrosExibidos);
-		};
-
-		$scope.alternarSelecaoGrupo = function() {
-			return SelecaoService.alternarSelecaoGrupo($scope.carrosExibidos);
-		};
-
+		/*SELECAO DE UM CARRO*/
 		$scope.isSelecionado = function(carro) {
 			return SelecaoService.isSelecionado(carro);
 		};
@@ -35,10 +25,21 @@ app.controller('CarroListagemController',
 			return SelecaoService.alternarSelecao(carro);
 		};
 
+		/*SELECAO GRUPO DE CARROS*/
+		$scope.isTodosSelecionados = function() {
+			return SelecaoService.isTodosSelecionados($scope.carrosExibidos);
+		};
+
+		$scope.alternarSelecaoGrupo = function() {
+			return SelecaoService.alternarSelecaoGrupo($scope.carrosExibidos);
+		};
+
+		/*EDITAR CARRO*/
 		$scope.editar = function(carro) {
 			$location.path('/carros/' + carro.placa + "/editar");
 		};
 
+		/*DELTAR*/
 		$scope.removerSelecionados = function() {
 
 			if(Object.keys(SelecaoService.objetos).length === 0) {

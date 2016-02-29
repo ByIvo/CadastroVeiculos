@@ -91,6 +91,8 @@
 	}
 	];
 
+	var carroEdicao = {};
+
 	SelecaoService.key = function(carro) {
 		return carro.placa;
 	};
@@ -98,6 +100,10 @@
 	var carroService = {
 		all: function() {
 			return $q.when(carros);
+		},
+
+		carroEdicao: function() {
+			return carroEdicao;
 		},
 
 		selecionados: function() {
@@ -121,21 +127,39 @@
 			return deferred.promise;
 		},
 
-		salvarCarro: function(carro) {
+		validarPromiseCarro: function(carro, funcao) {
 			var deferred = $q.defer();
 
 			if(!carro.placa) {
 				deferred.reject('Carro não possui placa!');
 			}else {
-				carros = _.reject(carros, function(carroLista) {
-					return HelperService.isCarroIgual(carro, carroLista);
-				});
-
-				carros.push(carro);
-				deferred.resolve('Carro gravado com sucesso!');
+				if(funcao) funcao(deferred);
 			}
 
 			return deferred.promise;
+		},
+
+		editarCarro: function(novo, velho) {
+			var that = this;
+
+			return this.validarPromiseCarro(novo, function(deferred) {
+				carros = that.removerCarro(velho);
+				carros.push(novo);
+				deferred.resolve('Carro gravado com sucesso!');
+			});
+		},
+
+		removerCarro: function(carro) {
+			return _.reject(carros, function(carroLista) {
+				return HelperService.isCarroIgual(carro, carroLista);
+			});
+		},
+
+		salvarCarro: function(carro) {
+			return this.validarPromiseCarro(carro, function(deferred) {
+				carros.push(carro);
+				deferred.resolve('Carro gravado com sucesso!');
+			});
 		},
 
 		removerSelecionados: function() {
