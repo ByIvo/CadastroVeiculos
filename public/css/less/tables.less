@@ -3,7 +3,7 @@ table.ca-table {
 	width: 100%;
 	max-width: 100%;
 	margin-bottom: 0px;
-	border-color: @border-normal;
+	border-color: @color-grey;
 	border-spacing: 0;
 	border-collapse: separate;
 	white-space: normal;
@@ -52,11 +52,11 @@ table.ca-table {
 		vertical-align: inherit;
 
 		&:hover {
-			background-color: @item-hover;
+			background-color: @color-grey-semi-light;
 		}
 
 		&:last-child > td {
-			border-bottom-color: @border-normal;
+			border-bottom-color: @color-grey;
 			border-bottom-style: solid;
 			border-bottom-width: 1px;
 		}
@@ -68,18 +68,18 @@ table.ca-table {
 			}
 
 			td {
-				background-color: @item-selected;
-				border-top-color: @border-selected;
-				border-bottom:1px solid @border-selected !important;
+				background-color: @color-blue-light;
+				border-top-color: @color-blue-semi-light;
+				border-bottom:1px solid @color-blue-semi-light !important;
 
 				&:first-child {
 					border-left-style: solid;
 					border-left-width: 1px;
-					border-left-color: @border-selected;
+					border-left-color: @color-blue-semi-light;
 				}
 
 				&:last-child {
-					border-right-color: @border-selected;
+					border-right-color: @color-blue-semi-light;
 					border-right-style: solid;
 					border-right-width: 1px;
 				}
@@ -105,18 +105,18 @@ table.ca-table {
 				padding-right: 40px;
 				border-right-width: 1px; 
 				border-right-style: solid;
-				border-right-color: @border-normal;
+				border-right-color: @color-grey;
 			}
 
 			&:first-child {
 				border-left-width: 1px; 
 				border-left-style: solid;
-				border-left-color: @border-normal;
+				border-left-color: @color-grey;
 			}
 		}
 
 		> td {
-			border-top: 1px solid @border-normal;
+			border-top: 1px solid @color-grey;
 			height: 50px;
 			overflow: hidden;
 			text-overflow: ellipsis !important;
@@ -128,19 +128,19 @@ table.ca-table {
 
   				a {
   					  text-decoration: underline;
-					  color: @primary-color;
+					  color: @color-green-semi-dark;
 					  font-weight: 600;
 					  font-size: 15px;
 
 					  &:hover {
-					  	 color: @primary-color-hover;
+					  	 color: @color-green-semi-dark-hover;
 					  }
   				}
 			}
 		}
 
 		> th {
-			background-color: @table-header;
+			background-color: @color-grey-semi-light;
 			height: 40px;
 			display: table-cell;
 			vertical-align: inherit;
@@ -150,7 +150,7 @@ table.ca-table {
 
 			border-top-width: 1px; 
 			border-top-style: solid;
-			border-top-color: @border-normal;
+			border-top-color: @color-grey;
 
 			&:first-child {
 				border-radius: 3px 0px 0px 0px;
@@ -192,8 +192,8 @@ table.ca-table {
 
 		&:hover {
 			z-index: 2;
-			background-color: @item-hover;
-			border-color: @border-hover;
+			background-color: @color-grey;
+			border-color: @color-grey;
 		}
 	}
 
@@ -202,8 +202,8 @@ table.ca-table {
 		a{
 			z-index: 3;
 			cursor: default;
-			background-color: @item-selected;
-			border-color: @border-selected;
+			background-color: @color-blue-light;
+			border-color: @color-blue-semi-light;
 		}
 	}
 }

@@ -16,7 +16,7 @@
 
 		<div class="col-xs-12">
 			<form novalidate name="form_carro" class="form-inline ca-form" ng-submit="salvar()">
-				<div class="form-group ca-required col-lg-4">
+				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="placa">Placa</label>
 					<input 
 					ng-class="{'ca-invalid': form_carro.placa.$invalid && !form_carro.$pristine, 
@@ -27,7 +27,7 @@
 					<span class="ca-message" ng-show="form_carro.placa.$invalid">Informe a placa (Padrão AAA-9999)</span>
 				</div>
 
-				<div class="form-group ca-required col-lg-4">
+				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="marca">Marca</label>
 					<input
 					ng-class="{'ca-invalid': form_carro.marca.$invalid && !form_carro.$pristine, 
@@ -38,7 +38,7 @@
 					<span class="ca-message" ng-show="form_carro.marca.$invalid">Preencha a marca</span>
 				</div>
 
-				<div class="form-group ca-required col-lg-4">
+				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="modelo">Modelo</label>
 					<input
 					ng-class="{'ca-invalid': form_carro.modelo.$invalid && !form_carro.$pristine, 
@@ -49,7 +49,7 @@
 					<span class="ca-message" ng-show="form_carro.modelo.$invalid">Preencha o modelo</span>
 				</div>
 
-				<div class="form-group col-lg-4">
+				<div class="form-group col-lg-4 col-md-6 col-sm-12">
 					<label for="combustivel">Combustível</label>
 					<select ng-init="carro.combustivel = 'Gasolina'" class="form-control" name="combustivel" ng-model="carro.combustivel" id="combustivel">
 						<option value="Gasolina">Gasolina</option>
@@ -58,7 +58,7 @@
 					</select>
 				</div>
 
-				<div class="form-group col-lg-4">
+				<div class="form-group col-lg-4 col-md-6 col-sm-12">
 					<label for="foto">Imagem</label>
 					<input type="text" ng-model="carro.foto" class="form-control" name="foto" id="foto" placeholder="Imagem">
 				</div>

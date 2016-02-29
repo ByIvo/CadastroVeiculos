@@ -4,7 +4,7 @@
   src: url("../fonts/proxima-nova/proximanova-regular.eot") format("embedded-opentype"), url("../fonts/proxima-nova/proximanova-regular.woff") format("woff"), url("../fonts/proxima-nova/proximanova-regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "proxima-nova-cond";
+  font-family: "proxima-nova-condensed";
   font-style: normal;
   src: url("../fonts/proxima-nova/proximanovacond-regular.eot") format("embedded-opentype"), url("../fonts/proxima-nova/proximanovacond-regular.woff") format("woff"), url("../fonts/proxima-nova/proximanovacond-regular.ttf") format("truetype");
 }
@@ -81,7 +81,7 @@ body {
   width: 140px;
   border-width: 1px;
   border-style: solid;
-  border-color: #c9d3dd;
+  border-color: #C1C3C7;
   border-radius: 3px;
   padding: 12px 15px;
   box-sizing: border-box;
@@ -95,7 +95,7 @@ body {
 }
 .ca-btn-default {
   color: #385a7b;
-  background-color: #f8fafc;
+  background-color: #F1F4F9;
 }
 .ca-btn-default:hover {
   background-color: rgba(255, 255, 255, 0.8);
@@ -105,12 +105,12 @@ body {
 .ca-btn-primary {
   background-color: #4aba58;
   border: 1px solid #4aba58;
-  color: #FFF;
+  color: #FFFFFF;
 }
 .ca-btn-primary:hover {
   background-color: rgba(74, 186, 88, 0.8);
   border: 1px solid #4aba58;
-  color: #FFF;
+  color: #FFFFFF;
   text-decoration: none;
 }
 .ca-btn-busca span:before {
@@ -119,7 +119,7 @@ body {
 }
 .ca-input-group input {
   height: 40px;
-  border: 1px solid #c9d3dd;
+  border: 1px solid #C1C3C7;
   border-radius: 3px;
 }
 .ca-input-group button {
@@ -132,7 +132,7 @@ table.ca-table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 0px;
-  border-color: #C9D3DD;
+  border-color: #C1C3C7;
   border-spacing: 0;
   border-collapse: separate;
   white-space: normal;
@@ -175,10 +175,10 @@ table.ca-table tr {
   vertical-align: inherit;
 }
 table.ca-table tr:hover {
-  background-color: #FFFAEB;
+  background-color: #F1F4F9;
 }
 table.ca-table tr:last-child > td {
-  border-bottom-color: #C9D3DD;
+  border-bottom-color: #C1C3C7;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
@@ -220,16 +220,16 @@ table.ca-table tr th:last-child {
   padding-right: 40px;
   border-right-width: 1px;
   border-right-style: solid;
-  border-right-color: #C9D3DD;
+  border-right-color: #C1C3C7;
 }
 table.ca-table tr td:first-child,
 table.ca-table tr th:first-child {
   border-left-width: 1px;
   border-left-style: solid;
-  border-left-color: #C9D3DD;
+  border-left-color: #C1C3C7;
 }
 table.ca-table tr > td {
-  border-top: 1px solid #C9D3DD;
+  border-top: 1px solid #C1C3C7;
   height: 50px;
   overflow: hidden;
   text-overflow: ellipsis !important;
@@ -249,7 +249,7 @@ table.ca-table tr > td.ca-vazia a:hover {
   color: rgba(74, 186, 88, 0.8);
 }
 table.ca-table tr > th {
-  background-color: #F8FAFC;
+  background-color: #F1F4F9;
   height: 40px;
   display: table-cell;
   vertical-align: inherit;
@@ -258,7 +258,7 @@ table.ca-table tr > th {
   font-weight: 600;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: #C9D3DD;
+  border-top-color: #C1C3C7;
 }
 table.ca-table tr > th:first-child {
   border-radius: 3px 0px 0px 0px;
@@ -287,8 +287,8 @@ table.ca-table > thead {
 }
 .ca-paginador li a:hover {
   z-index: 2;
-  background-color: #FFFAEB;
-  border-color: #C9D3DD;
+  background-color: #C1C3C7;
+  border-color: #C1C3C7;
 }
 .ca-paginador .ca-ativo a {
   z-index: 3;
@@ -300,10 +300,10 @@ input[type='checkbox'].ca-checkbox {
   display: none;
 }
 input[type='checkbox'].ca-checkbox ~ label {
-  border: 1px solid #C9D3DD;
+  border: 1px solid #C1C3C7;
   display: inline-block;
   margin-bottom: 0px;
-  background-color: #FFF;
+  background-color: #FFFFFF;
 }
 input[type='checkbox'].ca-checkbox:checked ~ label {
   border-color: #8BC8F6;
@@ -344,17 +344,19 @@ input[type='checkbox']:checked ~ label:before {
   background-color: transparent;
 }
 .ca-breadcrumb a {
-  color: #0088cc;
+  color: #2687E9;
   cursor: pointer;
   text-decoration: underline;
 }
 .ca-breadcrumb .ca-ativo {
-  color: #395a7a;
+  color: #4983BB;
   cursor: default;
 }
 h5.ca-page-title {
   text-transform: UPPERCASE;
-  border-bottom: 1px solid #C9D3DD;
+  border-bottom: 1px solid #C1C3C7;
+  font-family: 'proxima-nova-condensed' !important;
+  font-size: 16px;
 }
 .ca-form {
   margin-top: 20px;
@@ -385,7 +387,7 @@ h5.ca-page-title {
   margin-bottom: 0px;
 }
 .ca-form span.ca-message {
-  color: #b94a48;
+  color: #B54848;
   font-size: 12px;
   position: absolute;
   margin-top: -20px;
@@ -396,13 +398,13 @@ h5.ca-page-title {
   box-shadow: none;
   font-size: 14px;
   display: block;
-  background-color: #FFF;
-  border: 1px solid #C9D3DD;
+  background-color: #FFFFFF;
+  border: 1px solid #C1C3C7;
   transition: border linear 0.2s, box-shadow linear 0.2s;
   height: 20px;
   margin-bottom: 20px;
   line-height: 20px;
-  color: #395a7a;
+  color: #4983BB;
   border-radius: 3px;
   font-weight: normal;
   width: 90% !important;
@@ -422,9 +424,9 @@ h5.ca-page-title {
 }
 .ca-form select.ca-invalid,
 .ca-form input.ca-invalid {
-  border: 1px solid #e9322d;
-  box-shadow: 0 0 6px #f8b9b7;
-  color: #b94a48;
+  border: 1px solid #D32F2F;
+  box-shadow: 0 0 6px #F7D9D9;
+  color: #B54848;
 }
 .ca-form input {
   margin-left: 0;

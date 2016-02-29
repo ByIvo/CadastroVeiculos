@@ -6,13 +6,13 @@
 	background-color: transparent;
 
 	a {
-		color: @link-normal;
+		color: @color-blue;
 		cursor: pointer;
 		text-decoration: underline;
 	}
 
 	.ca-ativo {
-		color: @form-text;
+		color: @color-blue-semi-dark;
 		cursor: default;
 	}
 }
@@ -20,7 +20,9 @@
 h5 {
 	&.ca-page-title {
 		text-transform: UPPERCASE;
-		border-bottom: 1px solid @border-normal;
+		border-bottom: 1px solid @color-grey;
+		font-family: @title-font-family;
+		font-size: 16px;
 	}
 }
 
@@ -63,7 +65,7 @@ h5 {
 	}
 
 	span.ca-message {
-		color: @text-invalid;
+		color: @color-red-semi-dark;
 		font-size: 12px;
 		position: absolute;
 		margin-top: -20px;
@@ -74,13 +76,13 @@ h5 {
 		box-shadow: none;
 		font-size: 14px;
 		display: block;
-		background-color: @white;
-		border: 1px solid @border-normal;
+		background-color: @color-white;
+		border: 1px solid @color-grey;
 		transition: border linear 0.2s, box-shadow linear 0.2s;
 		height: 20px;
 		margin-bottom: 20px;
 		line-height: 20px;
-		color: @form-text;
+		color: @color-blue-semi-dark;
 		border-radius: 3px;
 		font-weight: normal;
 		width: 90% !important;
@@ -93,15 +95,15 @@ h5 {
 			outline: 0;
 
 			&.ca-valid {
-				border: 1px solid @primary-color;
-				box-shadow: 0 0 6px @primary-color-hover;
+				border: 1px solid @color-green-semi-dark;
+				box-shadow: 0 0 6px @color-green-semi-dark-hover;
 			}
 		}
 
 		&.ca-invalid {
-			border: 1px solid @border-invalid;
-			box-shadow: 0 0 6px @shadow-invalid;
-			color: @text-invalid;
+			border: 1px solid @color-red;
+			box-shadow: 0 0 6px @color-red-light;
+			color: @color-red-semi-dark;
 		}
 	} 
 
