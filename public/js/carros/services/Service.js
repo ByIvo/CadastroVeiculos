@@ -1,4 +1,4 @@
-﻿app.factory('CarroService',['$q', 'HelperService', function($q, HelperService) {
+﻿app.factory('CarroService',['$q', 'HelperService', 'SelecaoService', function($q, HelperService, SelecaoService) {
 
 	var carros = [ 
 	{ 
@@ -91,7 +91,9 @@
 	}
 	];
 
-	var selecionados = new SelecaoMultipla(function(carro){return carro.placa;});
+	SelecaoService.key = function(carro) {
+		return carro.placa;
+	}
 
 	var carroService = {
 		all: function() {
@@ -99,7 +101,7 @@
 		},
 
 		selecionados: function() {
-			return selecionados;
+			return SelecaoService.objetos;
 		},
 
 		salvarCarro: function(carro) {
@@ -120,7 +122,7 @@
 		},
 
 		removerSelecionados: function() {
-			var carrosSelecionados = selecionados.objetos;
+			var carrosSelecionados = SelecaoService.objetos;
 
 			var carrosRestantes = _.reject(carros, function(carro) {
 				return _.some(carrosSelecionados, function(carroSelecionado){
@@ -129,7 +131,7 @@
 			});
 
 			carros = carrosRestantes;
-			selecionados.limpar();
+			SelecaoService.limpar();
 
 			return this.all();
 		}

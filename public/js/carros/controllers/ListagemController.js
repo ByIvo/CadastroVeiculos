@@ -1,5 +1,5 @@
 app.controller('CarroListagemController', 
-	['$scope', 'CarroService', 'HelperService', '$location', function($scope, CarroService, HelperService, $location) {
+	['$scope', 'CarroService', 'HelperService', 'SelecaoService', '$location', function($scope, CarroService, HelperService, SelecaoService,$location) {
 
 		$scope.campoOrdenacao = 'placa';
 		$scope.desc = false;
@@ -15,23 +15,29 @@ app.controller('CarroListagemController',
 			$scope.carros = carros;
 		});
 
-		$scope.selecionados = CarroService.selecionados();
-
 		$scope.isSelecionado = function(carro) {
-			return $scope.selecionados.isSelecionado(carro);
+			return SelecaoService.isSelecionado(carro);
 		};
 
 		$scope.isTodosSelecionados = function() {
-			return $scope.selecionados.isTodosSelecionados($scope.carrosExibidos);
+			return SelecaoService.isTodosSelecionados($scope.carrosExibidos);
 		};
 
 		$scope.alternarSelecaoGrupo = function() {
-			return $scope.selecionados.alternarSelecaoGrupo($scope.carrosExibidos);
+			return SelecaoService.alternarSelecaoGrupo($scope.carrosExibidos);
+		};
+
+		$scope.isSelecionado = function(carro) {
+			return SelecaoService.isSelecionado(carro);
+		};
+
+		$scope.alternarSelecao = function(carro) {
+			return SelecaoService.alternarSelecao(carro);
 		};
 
 		$scope.removerSelecionados = function() {
 
-			if(Object.keys(CarroService.selecionados().objetos).length === 0) {
+			if(Object.keys(SelecaoService.objetos).length === 0) {
 				HelperService.showMensagemErro('Você precisa selecionar ao menos um carro :)');
 			}else {
 				HelperService.showMensagemConfirmacao("Ao deletar um arquivo, ele não poderá mais ser recuperado.", function() {

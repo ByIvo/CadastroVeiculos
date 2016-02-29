@@ -79,7 +79,7 @@
 				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" 
 				dir-paginate="carro in (carrosExibidos = (carros | carroFiltro:filtrar:'marca':'combustivel' | orderBy:campoOrdenacao:desc | itemsPerPage: 5))">
 				<td>
-					<input ng-checked="selecionados.isSelecionado(carro)" ng-click="selecionados.alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
+					<input ng-checked="isSelecionado(carro)" ng-click="alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
 					<label for="chk-{{$index}}"></label>
 				</td>
 				<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
