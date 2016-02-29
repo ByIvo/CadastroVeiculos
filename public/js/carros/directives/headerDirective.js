@@ -1,4 +1,4 @@
-angular.module('conta-azul').directive('headerDirective', function() {
+app.directive('headerDirective', function() {
 
 	return {
 		restrict: 'E',

@@ -1,4 +1,4 @@
-angular.module('conta-azul').controller('CarroController', 
+app.controller('CarroController', 
 	['$scope','$routeParams','$location', 'CarroService', function($scope, $routeParams,$location, CarroService) {
 
 		if($location.placaCarro) {

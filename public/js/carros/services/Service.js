@@ -1,4 +1,4 @@
-﻿angular.module('conta-azul').factory('CarroService',['$q', function($q) {
+﻿app.factory('CarroService',['$q', function($q) {
 
 	var carros = [ 
 	{ 

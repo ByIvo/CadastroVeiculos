@@ -1,4 +1,4 @@
-angular.module('conta-azul').filter('carroFiltro', function () {
+app.filter('carroFiltro', function () {
     
     var filtroFunc = function (carros, filtro) {
         if (!carros) return;

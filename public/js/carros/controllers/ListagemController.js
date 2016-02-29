@@ -1,4 +1,4 @@
-angular.module('conta-azul').controller('CarroListagemController', 
+app.controller('CarroListagemController', 
 	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
 
 		$scope.campoOrdenacao = 'placa';
