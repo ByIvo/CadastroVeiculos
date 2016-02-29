@@ -77,7 +77,7 @@
 					<input ng-checked="isSelecionado(carro)" ng-click="alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
 					<label for="chk-{{$index}}"></label>
 				</td>
-				<td ng-click="editar(carro)" title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
+				<td ng-click="editar(carro)" title="{{carro.placa}}" class="ca-upper ca-col-placa">{{carro.placa}}</td>
 				<td ng-click="editar(carro)" title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
 				<td ng-click="editar(carro)" title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
 				<td ng-click="editar(carro)" ng-if="carro.imagem" class="ca-col-foto">

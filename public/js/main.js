@@ -1,4 +1,4 @@
-var app = angular.module('conta-azul', ['ngRoute', 'angularUtils.directives.dirPagination']);
+var app = angular.module('conta-azul', ['ngRoute','ngMask','ui.utils.masks', 'angularUtils.directives.dirPagination']);
 
 app.config(['$routeProvider', function($routeProvider) {
 

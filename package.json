@@ -1,8 +1,11 @@
 {
 	"name": "testecontaazul",
 	"version": "0.1.0",
-	"license": "ISC",
 	"description": "Teste para vaga frontend na ContaAzul",
+	"scripts": {
+		"install": "bower install"
+		},
+	"license": "ISC",
 	"author": "@ByIvo",
 	"devDependencies": {
 		"grunt": "~0.4.5",

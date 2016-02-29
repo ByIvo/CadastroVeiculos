@@ -21,9 +21,10 @@
 					<div>
 						<input 
 						ng-class="{'ca-invalid': form_carro.placa.$invalid && !form_carro.$pristine, 
-						'ca-valid': form_carro.placa.$valid}" 
+						'ca-valid': form_carro.placa.$valid}"
+						mask-restrict='reject' mask="@@@-9999"
 						ng-pattern="placaRegex" ng-required="true" ng-model="carro.placa" 
-						type="text" maxlength="8" class="form-control" name="placa" id="placa" 
+						type="text" maxlength="8" class="ca-upper form-control" name="placa" id="placa" 
 						placeholder="Placa"/>
 						<span></span>
 					</div>
@@ -81,7 +82,7 @@
 				<div class="form-group col-lg-4">
 					<label for="valor">Valor</label>
 					<div>
-						<input type="text" ng-model="carro.valor" name="valor" class="form-control" id="valor" placeholder="Valor"/>
+						<input type="text" ui-money-mask="2" ng-model="carro.valor" ng-init="carro.valor=0.00" name="valor" class="form-control" id="valor" placeholder="Valor"/>
 						<span></span>
 					</div>
 				</div>

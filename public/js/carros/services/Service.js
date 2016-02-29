@@ -121,7 +121,7 @@
 			if(carroBusca) {
 				deferred.resolve(carroBusca);
 			}else {
-				deferred.reject('Placa não encontrada :(');
+				deferred.reject('Carro não encontrado :(');
 			}
 
 			return deferred.promise;

@@ -11,22 +11,21 @@ app.controller('CarroController',
 				$scope.carroEdicao = carro;
 				$scope.carro = angular.copy($scope.carroEdicao);
 			}, function(erro) {
-				HelperService.showMensagemErro(erro, function() {
-					$location.path="#/carros";
-				});
+				$location.path('#/carros');
+				HelperService.showMensagemErro(erro);
 			});
 		}
 
 		/*AÇÕES DE SUBMIT*/
 		var novoCarro = function() {
 			CarroService.salvarCarro($scope.carro).then(function(message) {
-				$location.path('/');
+				$location.path('#/carros');
 			});
 		};
 
 		var editarCarro = function() {
 			CarroService.editarCarro($scope.carro,$scope.carroEdicao).then(function(message) {
-				$location.path('/');
+				$location.path('#/carros');
 			});
 		};
 

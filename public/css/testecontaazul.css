@@ -18,6 +18,9 @@
 body {
   color: #385a7b;
 }
+.ca-upper {
+  text-transform: uppercase !important;
+}
 @media (min-width: 1200px) {
   .ca-container {
     width: 1024px;

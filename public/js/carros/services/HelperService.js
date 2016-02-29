@@ -8,29 +8,33 @@ app.factory('HelperService', function() {
 		showMensagemConfirmacao: function(mensagem, acao) {
 			swal({
 				title: "Você tem certeza?",   
-				text: mensagem,   
-				type: "warning",   
+				text: mensagem,
+				allowEscapeKey: true,   
 				showCancelButton: true,
-				calcelButtonText: 'Cancelar',
-				confirmButtonText: "Continuar",   
-				closeOnConfirm: true 
+				allowOutsideClick: true,
+				customClass: 'ca-popup',
+				cancelButtonText: 'Cancelar',
+				confirmButtonText: "Continuar",
+				closeOnConfirm: true
 			}, function(){   
-				if(acao) {
-					acao();
-				}
+				if(acao) acao();
 			});
 		},
 
 		showMensagemErro: function(mensagem, acao) {
-			swal({
+			
+		swal({
 				title: "Ops...",   
 				text: mensagem,
-				type: "error",   
+				allowEscapeKey: true,
+				allowOutsideClick: true,
+				showCancelButton: false,
+				showConfirmButton: true,  
+				customClass: 'ca-popup',
+				closeOnConfirm: true,
 				confirmButtonText: "Fechar"
 			}, function(){   
-				if(acao) {
-					acao();
-				}
+				if(acao) acao();
 			});
 		},
 
