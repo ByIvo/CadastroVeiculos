@@ -1,9 +1,17 @@
 .ca-breadcrumb {
-	padding: 0px;
+	padding: 0;
 	margin-bottom: 20px;
 	list-style: none;
 	margin-top: 0;
 	background-color: transparent;
+
+
+	> li + li:before {
+		padding: 0 5px;
+		font-size: 15px;
+		color: @color-blue-light;
+		content: ">";
+	}
 
 	a {
 		color: @color-blue;
@@ -61,7 +69,7 @@ h5 {
 		font-size: 13px !important;
 		line-height: 20px;
 		font-weight: normal;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 
 	span.ca-message {
@@ -78,7 +86,7 @@ h5 {
 		display: block;
 		background-color: @color-white;
 		border: 1px solid @color-grey;
-		transition: border linear 0.2s, box-shadow linear 0.2s;
+		transition: all linear 0.2s, box-shadow linear 0.2s;
 		height: 20px;
 		margin-bottom: 20px;
 		line-height: 20px;
@@ -97,6 +105,17 @@ h5 {
 			&.ca-valid {
 				border: 1px solid @color-green-semi-dark;
 				box-shadow: 0 0 6px @color-green-semi-dark-hover;
+
+				+ span {
+					.input-icone-validacao();
+
+					&:before {
+						content: "\e013";
+						font-family: @glyph-fonts;
+						color: @color-green-semi-dark;
+						transition: all linear 0.2s, box-shadow linear 0.2s;
+					}
+				}
 			}
 		}
 
@@ -104,6 +123,24 @@ h5 {
 			border: 1px solid @color-red;
 			box-shadow: 0 0 6px @color-red-light;
 			color: @color-red-semi-dark;
+
+			+ span {
+				.input-icone-validacao();
+
+				&:before {
+					content: "\e014";
+					font-family: @glyph-fonts;
+					color: @color-red;
+					transition: all linear 0.2s, box-shadow linear 0.2s;
+				}
+			}
+		}
+
+		.input-icone-validacao() {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			margin: 30px 15px;
 		}
 	} 
 

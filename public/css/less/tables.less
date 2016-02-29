@@ -2,7 +2,7 @@ table.ca-table {
 	display: table;
 	width: 100%;
 	max-width: 100%;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 	border-color: @color-grey;
 	border-spacing: 0;
 	border-collapse: separate;
@@ -52,7 +52,7 @@ table.ca-table {
 		vertical-align: inherit;
 
 		&:hover {
-			background-color: @color-grey-semi-light;
+			background-color: @color-orange-super-light;
 		}
 
 		&:last-child > td {
@@ -64,7 +64,7 @@ table.ca-table {
 		&.ca-selecionado {
 
 			+ tr > td {
-				border-top: 0px;
+				border-top: 0;
 			}
 
 			td {
@@ -98,7 +98,7 @@ table.ca-table {
 			cursor: pointer;
 
 			&:not(:first-child) {
-				padding-left: 0px;
+				padding-left: 0;
 			}
 
 			&:last-child {
@@ -144,7 +144,7 @@ table.ca-table {
 			height: 40px;
 			display: table-cell;
 			vertical-align: inherit;
-			margin-bottom: 0px;
+			margin-bottom: 0;
 			max-width: none;
 			font-weight: 600;
 
@@ -153,11 +153,11 @@ table.ca-table {
 			border-top-color: @color-grey;
 
 			&:first-child {
-				border-radius: 3px 0px 0px 0px;
+				border-radius: 3px 0 0 0;
 			}
 
 			&:last-child {
-				border-radius: 0px 3px 0px 0px;
+				border-radius: 0 3px 0 0;
 			}
 
 			span {
@@ -189,11 +189,12 @@ table.ca-table {
 		height: 40px;
 		padding: 10px 12px !important;
 		font-weight: 600;
+		border: 1px solid @color-grey;
 
 		&:hover {
 			z-index: 2;
-			background-color: @color-grey;
-			border-color: @color-grey;
+			background-color: @color-orange-super-light;
+			border: 1px solid @color-grey;
 		}
 	}
 
@@ -202,7 +203,7 @@ table.ca-table {
 		a{
 			z-index: 3;
 			cursor: default;
-			background-color: @color-blue-light;
+			background-color: @color-blue-light !important;
 			border-color: @color-blue-semi-light;
 		}
 	}

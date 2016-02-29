@@ -18,54 +18,72 @@
 			<form novalidate name="form_carro" class="form-inline ca-form" ng-submit="salvar()">
 				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="placa">Placa</label>
-					<input 
-					ng-class="{'ca-invalid': form_carro.placa.$invalid && !form_carro.$pristine, 
-					'ca-valid': form_carro.placa.$valid}" 
-					ng-pattern="placaRegex" ng-required="true" ng-model="carro.placa" 
-					type="text" maxlength="8" class="form-control" name="placa" id="placa" 
-					placeholder="Placa"/>
+					<div>
+						<input 
+						ng-class="{'ca-invalid': form_carro.placa.$invalid && !form_carro.$pristine, 
+						'ca-valid': form_carro.placa.$valid}" 
+						ng-pattern="placaRegex" ng-required="true" ng-model="carro.placa" 
+						type="text" maxlength="8" class="form-control" name="placa" id="placa" 
+						placeholder="Placa"/>
+						<span></span>
+					</div>
 					<span class="ca-message" ng-show="form_carro.placa.$invalid">Informe a placa (Padrão AAA-9999)</span>
 				</div>
 
 				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="marca">Marca</label>
-					<input
-					ng-class="{'ca-invalid': form_carro.marca.$invalid && !form_carro.$pristine, 
-					'ca-valid': form_carro.marca.$valid}" 
-					ng-required="true"
-					ng-model="carro.marca"
-					name="marca" type="text" class="form-control" id="marca" placeholder="Marca">
+					<div>
+						<input
+						ng-class="{'ca-invalid': form_carro.marca.$invalid && !form_carro.$pristine, 
+						'ca-valid': form_carro.marca.$valid}" 
+						ng-required="true"
+						ng-model="carro.marca"
+						name="marca" type="text" class="form-control" id="marca" placeholder="Marca"/>
+						<span></span>
+					</div>
 					<span class="ca-message" ng-show="form_carro.marca.$invalid">Preencha a marca</span>
 				</div>
 
 				<div class="form-group ca-required col-lg-4 col-md-6 col-sm-12">
 					<label for="modelo">Modelo</label>
-					<input
-					ng-class="{'ca-invalid': form_carro.modelo.$invalid && !form_carro.$pristine, 
-					'ca-valid': form_carro.modelo.$valid}" 
-					ng-required="true"
-					ng-model="carro.modelo" 
-					name="modelo" type="text" class="form-control" id="modelo" placeholder="Modelo">
+					<div>
+						<input
+						ng-class="{'ca-invalid': form_carro.modelo.$invalid && !form_carro.$pristine, 
+						'ca-valid': form_carro.modelo.$valid}" 
+						ng-required="true"
+						ng-model="carro.modelo" 
+						name="modelo" type="text" class="form-control" id="modelo" placeholder="Modelo"/>
+						<span></span>
+					</div>
 					<span class="ca-message" ng-show="form_carro.modelo.$invalid">Preencha o modelo</span>
 				</div>
 
 				<div class="form-group col-lg-4 col-md-6 col-sm-12">
 					<label for="combustivel">Combustível</label>
-					<select ng-init="carro.combustivel = 'Gasolina'" class="form-control" name="combustivel" ng-model="carro.combustivel" id="combustivel">
-						<option value="Gasolina">Gasolina</option>
-						<option value="Alcool">Alcool</option>
-						<option value="Flex">Flex</option>
-					</select>
+					<div>
+						<select ng-init="carro.combustivel = 'Gasolina'" class="form-control" name="combustivel" ng-model="carro.combustivel" id="combustivel">
+							<option value="Gasolina">Gasolina</option>
+							<option value="Alcool">Alcool</option>
+							<option value="Flex">Flex</option>
+						</select>
+						<span></span>
+					</div>
 				</div>
 
 				<div class="form-group col-lg-4 col-md-6 col-sm-12">
 					<label for="foto">Imagem</label>
-					<input type="text" ng-model="carro.foto" class="form-control" name="foto" id="foto" placeholder="Imagem">
+					<div>
+						<input type="text" ng-model="carro.foto" class="form-control" name="foto" id="foto" placeholder="Imagem"/>
+						<span></span>
+					</div>
 				</div>
 
 				<div class="form-group col-lg-4">
 					<label for="valor">Valor</label>
-					<input type="number" ng-model="carro.valor" name="valor" class="form-control" id="valor" placeholder="Valor">
+					<div>
+						<input type="number" ng-model="carro.valor" name="valor" class="form-control" id="valor" placeholder="Valor"/>
+						<span></span>
+					</div>
 				</div>
 
 				<div class="ca-container">

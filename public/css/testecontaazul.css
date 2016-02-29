@@ -38,16 +38,16 @@ body {
   padding-right: 0.9375rem;
 }
 .ca-padding-borda-esquerda {
-  padding-left: 0px;
+  padding-left: 0;
   padding-right: 0.9375rem;
 }
 .ca-padding-borda-direita {
   padding-left: 0.9375rem;
-  padding-right: 0px;
+  padding-right: 0;
 }
 .ca-padding-borda-direita-padrao {
   padding-left: 15px;
-  padding-right: 0px;
+  padding-right: 0;
 }
 .header {
   height: 50px;
@@ -131,7 +131,7 @@ table.ca-table {
   display: table;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   border-color: #C1C3C7;
   border-spacing: 0;
   border-collapse: separate;
@@ -175,7 +175,7 @@ table.ca-table tr {
   vertical-align: inherit;
 }
 table.ca-table tr:hover {
-  background-color: #F1F4F9;
+  background-color: #FFFAEB;
 }
 table.ca-table tr:last-child > td {
   border-bottom-color: #C1C3C7;
@@ -183,7 +183,7 @@ table.ca-table tr:last-child > td {
   border-bottom-width: 1px;
 }
 table.ca-table tr.ca-selecionado + tr > td {
-  border-top: 0px;
+  border-top: 0;
 }
 table.ca-table tr.ca-selecionado td {
   background-color: #D8E9FB;
@@ -213,7 +213,7 @@ table.ca-table tr th {
 }
 table.ca-table tr td:not(:first-child),
 table.ca-table tr th:not(:first-child) {
-  padding-left: 0px;
+  padding-left: 0;
 }
 table.ca-table tr td:last-child,
 table.ca-table tr th:last-child {
@@ -253,7 +253,7 @@ table.ca-table tr > th {
   height: 40px;
   display: table-cell;
   vertical-align: inherit;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   max-width: none;
   font-weight: 600;
   border-top-width: 1px;
@@ -261,10 +261,10 @@ table.ca-table tr > th {
   border-top-color: #C1C3C7;
 }
 table.ca-table tr > th:first-child {
-  border-radius: 3px 0px 0px 0px;
+  border-radius: 3px 0 0 0;
 }
 table.ca-table tr > th:last-child {
-  border-radius: 0px 3px 0px 0px;
+  border-radius: 0 3px 0 0;
 }
 table.ca-table tr > th span.ca-ordem-button:after {
   font-family: 'Glyphicons Halflings';
@@ -284,16 +284,17 @@ table.ca-table > thead {
   height: 40px;
   padding: 10px 12px !important;
   font-weight: 600;
+  border: 1px solid #C1C3C7;
 }
 .ca-paginador li a:hover {
   z-index: 2;
-  background-color: #C1C3C7;
-  border-color: #C1C3C7;
+  background-color: #FFFAEB;
+  border: 1px solid #C1C3C7;
 }
 .ca-paginador .ca-ativo a {
   z-index: 3;
   cursor: default;
-  background-color: #D8E9FB;
+  background-color: #D8E9FB !important;
   border-color: #8BC8F6;
 }
 input[type='checkbox'].ca-checkbox {
@@ -322,7 +323,7 @@ input[type='checkbox'].ca-checkbox-normal ~ label {
   width: 20px;
   height: 20px;
   border-radius: 3px;
-  margin: 0px;
+  margin: 0;
   line-height: 18px;
   font-size: 0.8em;
 }
@@ -337,11 +338,17 @@ input[type='checkbox']:checked ~ label:before {
   margin-left: -1px;
 }
 .ca-breadcrumb {
-  padding: 0px;
+  padding: 0;
   margin-bottom: 20px;
   list-style: none;
   margin-top: 0;
   background-color: transparent;
+}
+.ca-breadcrumb > li + li:before {
+  padding: 0 5px;
+  font-size: 15px;
+  color: #D8E9FB;
+  content: ">";
 }
 .ca-breadcrumb a {
   color: #2687E9;
@@ -384,7 +391,7 @@ h5.ca-page-title {
   font-size: 13px !important;
   line-height: 20px;
   font-weight: normal;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .ca-form span.ca-message {
   color: #B54848;
@@ -400,7 +407,7 @@ h5.ca-page-title {
   display: block;
   background-color: #FFFFFF;
   border: 1px solid #C1C3C7;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: all linear 0.2s, box-shadow linear 0.2s;
   height: 20px;
   margin-bottom: 20px;
   line-height: 20px;
@@ -422,11 +429,39 @@ h5.ca-page-title {
   border: 1px solid #4aba58;
   box-shadow: 0 0 6px rgba(74, 186, 88, 0.8);
 }
+.ca-form select:focus.ca-valid + span,
+.ca-form input:focus.ca-valid + span {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 30px 15px;
+}
+.ca-form select:focus.ca-valid + span:before,
+.ca-form input:focus.ca-valid + span:before {
+  content: "\e013";
+  font-family: 'Glyphicons Halflings';
+  color: #4aba58;
+  transition: all linear 0.2s, box-shadow linear 0.2s;
+}
 .ca-form select.ca-invalid,
 .ca-form input.ca-invalid {
   border: 1px solid #D32F2F;
   box-shadow: 0 0 6px #F7D9D9;
   color: #B54848;
+}
+.ca-form select.ca-invalid + span,
+.ca-form input.ca-invalid + span {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 30px 15px;
+}
+.ca-form select.ca-invalid + span:before,
+.ca-form input.ca-invalid + span:before {
+  content: "\e014";
+  font-family: 'Glyphicons Halflings';
+  color: #D32F2F;
+  transition: all linear 0.2s, box-shadow linear 0.2s;
 }
 .ca-form input {
   margin-left: 0;
