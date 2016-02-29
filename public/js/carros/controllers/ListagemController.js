@@ -1,5 +1,5 @@
 app.controller('CarroListagemController', 
-	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
+	['$scope', 'CarroService', 'HelperService', '$location', function($scope, CarroService, HelperService, $location) {
 
 		$scope.campoOrdenacao = 'placa';
 		$scope.desc = false;
@@ -32,9 +32,9 @@ app.controller('CarroListagemController',
 		$scope.removerSelecionados = function() {
 
 			if(Object.keys(CarroService.selecionados().objetos).length === 0) {
-				Helper.showMensagemErro('Você precisa selecionar ao menos um carro :)');
+				HelperService.showMensagemErro('Você precisa selecionar ao menos um carro :)');
 			}else {
-				Helper.showMensagemConfirmacao("Ao deletar um arquivo, ele não poderá mais ser recuperado.", function() {
+				HelperService.showMensagemConfirmacao("Ao deletar um arquivo, ele não poderá mais ser recuperado.", function() {
 					CarroService.removerSelecionados().then(function(carroRestantes){
 						$scope.carros = carroRestantes;
 					});

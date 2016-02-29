@@ -1,4 +1,4 @@
-﻿app.factory('CarroService',['$q', function($q) {
+﻿app.factory('CarroService',['$q', 'HelperService', function($q, HelperService) {
 
 	var carros = [ 
 	{ 
@@ -109,7 +109,7 @@
 				deferred.reject('Carro não possui placa!');
 			}else {
 				carros = _.reject(carros, function(carroLista) {
-					return Helper.isCarroIgual(carro, carroLista);
+					return HelperService.isCarroIgual(carro, carroLista);
 				});
 
 				carros.push(carro);
@@ -124,7 +124,7 @@
 
 			var carrosRestantes = _.reject(carros, function(carro) {
 				return _.some(carrosSelecionados, function(carroSelecionado){
-					return Helper.isCarroIgual(carroSelecionado, carro);
+					return HelperService.isCarroIgual(carroSelecionado, carro);
 				});
 			});
 
