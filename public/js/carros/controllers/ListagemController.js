@@ -35,6 +35,10 @@ app.controller('CarroListagemController',
 			return SelecaoService.alternarSelecao(carro);
 		};
 
+		$scope.editar = function(carro) {
+			$location.path('/carros/' + carro.placa + "/editar");
+		};
+
 		$scope.removerSelecionados = function() {
 
 			if(Object.keys(SelecaoService.objetos).length === 0) {

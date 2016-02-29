@@ -38,7 +38,7 @@
 						'ca-valid': form_carro.marca.$valid}" 
 						ng-required="true"
 						ng-model="carro.marca"
-						name="marca" type="text" class="form-control" id="marca" placeholder="Marca"/>
+						name="marca" type="text" maxlength="80" class="form-control" id="marca" placeholder="Marca"/>
 						<span></span>
 					</div>
 					<span class="ca-message" ng-show="form_carro.marca.$invalid">Preencha a marca</span>
@@ -52,7 +52,7 @@
 						'ca-valid': form_carro.modelo.$valid}" 
 						ng-required="true"
 						ng-model="carro.modelo" 
-						name="modelo" type="text" class="form-control" id="modelo" placeholder="Modelo"/>
+						name="modelo" type="text" class="form-control" maxlength="80" id="modelo" placeholder="Modelo"/>
 						<span></span>
 					</div>
 					<span class="ca-message" ng-show="form_carro.modelo.$invalid">Preencha o modelo</span>
@@ -71,9 +71,9 @@
 				</div>
 
 				<div class="form-group col-lg-4 col-md-6 col-sm-12">
-					<label for="foto">Imagem</label>
+					<label for="imagem">Imagem</label>
 					<div>
-						<input type="text" ng-model="carro.foto" class="form-control" name="foto" id="foto" placeholder="Imagem"/>
+						<input type="text" ng-model="carro.imagem" maxlength="300" class="form-control" name="imagem" id="imagem" placeholder="Imagem"/>
 						<span></span>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 				<div class="form-group col-lg-4">
 					<label for="valor">Valor</label>
 					<div>
-						<input type="number" ng-model="carro.valor" name="valor" class="form-control" id="valor" placeholder="Valor"/>
+						<input type="text" ng-model="carro.valor" name="valor" class="form-control" id="valor" placeholder="Valor"/>
 						<span></span>
 					</div>
 				</div>

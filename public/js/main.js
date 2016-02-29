@@ -7,7 +7,7 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'CarroListagemController'
 	});
 
-	$routeProvider.when('/carros/novo/:placaCarro/editar', {
+	$routeProvider.when('/carros/:placaCarro/editar', {
 		templateUrl: 'partials/form_carro.html',
 		controller: 'CarroController'
 	});

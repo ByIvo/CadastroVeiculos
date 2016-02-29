@@ -93,7 +93,7 @@
 
 	SelecaoService.key = function(carro) {
 		return carro.placa;
-	}
+	};
 
 	var carroService = {
 		all: function() {
@@ -102,6 +102,23 @@
 
 		selecionados: function() {
 			return SelecaoService.objetos;
+		},
+
+		buscarCarro: function(placa) {
+			var deferred = $q.defer();
+
+			var carroSimulado = {'placa':placa};
+			var carroBusca = _.find(carros, function(carro) {
+				return HelperService.isCarroIgual(carro, carroSimulado);
+			});
+
+			if(carroBusca) {
+				deferred.resolve(carroBusca);
+			}else {
+				deferred.reject('Placa não encontrada :(');
+			}
+
+			return deferred.promise;
 		},
 
 		salvarCarro: function(carro) {

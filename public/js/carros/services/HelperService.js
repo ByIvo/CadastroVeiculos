@@ -21,12 +21,16 @@ app.factory('HelperService', function() {
 			});
 		},
 
-		showMensagemErro: function(mensagem) {
+		showMensagemErro: function(mensagem, acao) {
 			swal({
-				title: "Ops!",   
+				title: "Ops...",   
 				text: mensagem,
 				type: "error",   
 				confirmButtonText: "Fechar"
+			}, function(){   
+				if(acao) {
+					acao();
+				}
 			});
 		},
 

@@ -1,8 +1,14 @@
 app.controller('CarroController', 
-	['$scope','$routeParams','$location', 'CarroService', function($scope, $routeParams,$location, CarroService) {
+	['$scope','$routeParams','$location', 'CarroService', 'HelperService', function($scope, $routeParams,$location, CarroService, HelperService) {
 
-		if($location.placaCarro) {
-
+		if($routeParams.placaCarro) {
+			CarroService.buscarCarro($routeParams.placaCarro).then(function(carro) {
+				$scope.carro = carro;
+			}, function(erro) {
+				HelperService.showMensagemErro(erro, function() {
+					$location.path="#/carros";
+				});
+			});
 		}else {
 			$scope.carro = {};
 		}

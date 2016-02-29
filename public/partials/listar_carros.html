@@ -69,12 +69,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-show="carrosExibidos.length === 0">
-					<td colspan="7" class="ca-vazia">
-						<div class="col-xs-12">Não há nenhum resultado para ser exibido!</div>
-						<div class="col-xs-12"><a href="#/carros/novo">Adicione um NOVO CARRO</a></div>
-					</td>
-				</tr>
+				
 
 				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" 
 				dir-paginate="carro in (carrosExibidos = (carros | carroFiltro:filtrar:'marca':'combustivel' | orderBy:campoOrdenacao:desc | itemsPerPage: 5))">
@@ -82,22 +77,29 @@
 					<input ng-checked="isSelecionado(carro)" ng-click="alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
 					<label for="chk-{{$index}}"></label>
 				</td>
-				<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
-				<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
-				<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
-				<td ng-if="!carro.imagem" class="ca-col-foto">
-					<a href="{{carro.imagem}}">Imagem</a>
+				<td ng-click="editar(carro)" title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
+				<td ng-click="editar(carro)" title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
+				<td ng-click="editar(carro)" title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
+				<td ng-click="editar(carro)" ng-if="carro.imagem" class="ca-col-foto">
+					<a target="_blank" href="{{carro.imagem}}">Imagem</a>
 				</td>
-				<td ng-if="carro.imagem" class="ca-col-foto">Sem foto</td>
-				<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
-				<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: ''}}</td>
+				<td ng-click="editar(carro)" ng-if="!carro.imagem" class="ca-col-foto">Sem foto</td>
+				<td ng-click="editar(carro)" title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
+				<td ng-click="editar(carro)" title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: ''}}</td>
+			</tr>
+
+			<tr ng-if="carrosExibidos.length === 0">
+				<td colspan="7" class="ca-vazia">
+					<div class="col-xs-12">Não há nenhum resultado para ser exibido!</div>
+					<div class="col-xs-12"><a href="#/carros/novo">Adicione um NOVO CARRO</a></div>
+				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
 <nav class="text-center">
-	<dir-pagination-controls
+	<dir-pagination-controls 
 	max-size="5"
 	direction-links="true"
 	template-url="partials/pagination.tpl.html" >
