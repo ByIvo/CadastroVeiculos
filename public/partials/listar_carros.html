@@ -32,41 +32,76 @@
 					</th>
 					<th ng-click="ordenar('placa')">
 						Placa
+						<span 
+						class="ca-ordem-button"
+						ng-show="campoOrdenacao == 'placa'"
+						ng-class="{'ca-ordem-button-asc': !desc, 'ca-ordem-button-desc': desc}"></span>
 					</th>
-					<th ng-click="ordenar('modelo')">Modelo</th>
-					<th ng-click="ordenar('marca')">Marca</th>
+					<th ng-click="ordenar('modelo')">
+						Modelo
+						<span 
+						class="ca-ordem-button"
+						ng-show="campoOrdenacao == 'modelo'"
+						ng-class="{'ca-ordem-button-asc': !desc, 'ca-ordem-button-desc': desc}"></span>
+					</th>
+					<th ng-click="ordenar('marca')">
+						Marca
+						<span 
+						class="ca-ordem-button"
+						ng-show="campoOrdenacao == 'marca'"
+						ng-class="{'ca-ordem-button-asc': !desc, 'ca-ordem-button-desc': desc}"></span>
+					</th>
 					<th>Foto</th>
-					<th ng-click="ordenar('combustivel')">Combustível</th>
-					<th ng-click="ordenar('valor')" class="ca-alinha-celula-direita">Valor</th>
+					<th ng-click="ordenar('combustivel')">
+						Combustível
+						<span 
+						class="ca-ordem-button"
+						ng-show="campoOrdenacao == 'combustivel'"
+						ng-class="{'ca-ordem-button-asc': !desc, 'ca-ordem-button-desc': desc}"></span>
+					</th>
+					<th ng-click="ordenar('valor')" class="ca-alinha-celula-direita">
+						Valor
+						<span 
+						class="ca-ordem-button"
+						ng-show="campoOrdenacao == 'valor'"
+						ng-class="{'ca-ordem-button-asc': !desc, 'ca-ordem-button-desc': desc}"></span>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" 
-					dir-paginate="carro in (carrosExibidos = (carros | carroFiltro:filtrar:'marca':'combustivel' | orderBy:campoOrdenacao:desc | itemsPerPage: 5))">
-					<td>
-						<input ng-checked="selecionados.isSelecionado(carro)" ng-click="selecionados.alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
-						<label for="chk-{{$index}}"></label>
+				<tr ng-show="carrosExibidos.length === 0">
+					<td colspan="7" class="ca-vazia">
+						<div class="col-xs-12">Não há nenhum resultado para ser exibido!</div>
+						<div class="col-xs-12"><a href="#/carros/novo">Adicione um NOVO CARRO</a></div>
 					</td>
-					<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
-					<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
-					<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
-					<td ng-if="!carro.imagem" class="ca-col-foto">
-						<a href="{{carro.imagem}}">Imagem</a>
-					</td>
-					<td ng-if="carro.imagem" class="ca-col-foto">Sem foto</td>
-					<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
-					<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: ''}}</td>
 				</tr>
-			</tbody>
-		</table>
-	</div>
 
-	<nav class="text-center">
-		<dir-pagination-controls
-		max-size="5"
-		direction-links="true"
-		template-url="partials/pagination.tpl.html" >
-	</dir-pagination-controls>
+				<tr ng-class="{'ca-selecionado': isSelecionado(carro)}" 
+				dir-paginate="carro in (carrosExibidos = (carros | carroFiltro:filtrar:'marca':'combustivel' | orderBy:campoOrdenacao:desc | itemsPerPage: 5))">
+				<td>
+					<input ng-checked="selecionados.isSelecionado(carro)" ng-click="selecionados.alternarSelecao(carro)" type="checkbox" class="ca-checkbox ca-checkbox-normal" id="chk-{{$index}}"/>
+					<label for="chk-{{$index}}"></label>
+				</td>
+				<td title="{{carro.placa}}" class="ca-col-placa">{{carro.placa}}</td>
+				<td title="{{carro.modelo}}" class="ca-col-modelo">{{carro.modelo}}</td>
+				<td title="{{carro.marca}}" class="ca-col-marca">{{carro.marca}}</td>
+				<td ng-if="!carro.imagem" class="ca-col-foto">
+					<a href="{{carro.imagem}}">Imagem</a>
+				</td>
+				<td ng-if="carro.imagem" class="ca-col-foto">Sem foto</td>
+				<td title="{{carro.combustivel}}" class="ca-col-combustivel">{{carro.combustivel}}</td>
+				<td title="{{carro.valor}}" class="ca-alinha-celula-direita">{{carro.valor | currency: ''}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<nav class="text-center">
+	<dir-pagination-controls
+	max-size="5"
+	direction-links="true"
+	template-url="partials/pagination.tpl.html" >
+</dir-pagination-controls>
 </nav>
 </div>
 

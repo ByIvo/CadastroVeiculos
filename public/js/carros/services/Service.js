@@ -102,6 +102,23 @@
 			return selecionados;
 		},
 
+		salvarCarro: function(carro) {
+			var deferred = $q.defer();
+
+			if(!carro.placa) {
+				deferred.reject('Carro não possui placa!');
+			}else {
+				carros = _.reject(carros, function(carroLista) {
+					return Helper.isCarroIgual(carro, carroLista);
+				});
+
+				carros.push(carro);
+				deferred.resolve('Carro gravado com sucesso!');
+			}
+
+			return deferred.promise;
+		},
+
 		removerSelecionados: function() {
 			var carrosSelecionados = selecionados.objetos;
 
@@ -113,7 +130,7 @@
 
 			carros = carrosRestantes;
 			selecionados.limpar();
-			
+
 			return this.all();
 		}
 	};

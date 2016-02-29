@@ -121,6 +121,22 @@ table.ca-table {
 			overflow: hidden;
 			text-overflow: ellipsis !important;
 			white-space: nowrap;
+
+			&.ca-vazia {
+				text-align: center;
+  				font-weight: 600;
+
+  				a {
+  					  text-decoration: underline;
+					  color: @primary-color;
+					  font-weight: 600;
+					  font-size: 15px;
+
+					  &:hover {
+					  	 color: @primary-color-hover;
+					  }
+  				}
+			}
 		}
 
 		> th {
@@ -143,6 +159,21 @@ table.ca-table {
 			&:last-child {
 				border-radius: 0px 3px 0px 0px;
 			}
+
+			span {
+				&.ca-ordem-button:after {
+					font-family: 'Glyphicons Halflings';
+					font-size: 8px;
+				}
+
+				&.ca-ordem-button-asc:after {
+					 content: "\e114";
+				}
+
+				&.ca-ordem-button-desc:after {
+					 content: "\e113";
+				}
+			}	
 		}
 	}
 

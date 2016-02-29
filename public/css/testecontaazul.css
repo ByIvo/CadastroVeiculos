@@ -235,6 +235,19 @@ table.ca-table tr > td {
   text-overflow: ellipsis !important;
   white-space: nowrap;
 }
+table.ca-table tr > td.ca-vazia {
+  text-align: center;
+  font-weight: 600;
+}
+table.ca-table tr > td.ca-vazia a {
+  text-decoration: underline;
+  color: #4aba58;
+  font-weight: 600;
+  font-size: 15px;
+}
+table.ca-table tr > td.ca-vazia a:hover {
+  color: rgba(74, 186, 88, 0.8);
+}
 table.ca-table tr > th {
   background-color: #F8FAFC;
   height: 40px;
@@ -252,6 +265,16 @@ table.ca-table tr > th:first-child {
 }
 table.ca-table tr > th:last-child {
   border-radius: 0px 3px 0px 0px;
+}
+table.ca-table tr > th span.ca-ordem-button:after {
+  font-family: 'Glyphicons Halflings';
+  font-size: 8px;
+}
+table.ca-table tr > th span.ca-ordem-button-asc:after {
+  content: "\e114";
+}
+table.ca-table tr > th span.ca-ordem-button-desc:after {
+  content: "\e113";
 }
 table.ca-table > thead {
   line-height: 16px;

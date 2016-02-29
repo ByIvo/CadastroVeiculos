@@ -1,7 +1,7 @@
 angular.module('conta-azul').controller('CarroListagemController', 
 	['$scope', 'CarroService', '$location', function($scope, CarroService,  $location) {
 
-		$scope.campoOrdenacao = '';
+		$scope.campoOrdenacao = 'placa';
 		$scope.desc = false;
 		$scope.filtrar = '';
 		$scope.carrosExibidos = [];
@@ -30,9 +30,15 @@ angular.module('conta-azul').controller('CarroListagemController',
 		};
 
 		$scope.removerSelecionados = function() {
-			CarroService.removerSelecionados().then(function(carroRestantes){
-				$scope.carros = carroRestantes;
-			});
-		};
 
+			if(Object.keys(CarroService.selecionados().objetos).length === 0) {
+				Helper.showMensagemErro('Você precisa selecionar ao menos um carro :)');
+			}else {
+				Helper.showMensagemConfirmacao("Ao deletar um arquivo, ele não poderá mais ser recuperado.", function() {
+					CarroService.removerSelecionados().then(function(carroRestantes){
+						$scope.carros = carroRestantes;
+					});
+				});
+			}
+		};
 	}]);
