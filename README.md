@@ -13,7 +13,13 @@
 ### Instalar dependências
 
 ```shell
-sudo npm install && bower install
+sudo npm install
+```
+
+### Em caso de falha na execução do bower, executar:
+
+```shell
+bower install
 ```
 
 ### Watch para mudanças
@@ -43,4 +49,8 @@ grunt dist
 ### Paginação
 
 > Sem dúvida um dos melhores recursos utilizados foram os de paginação; Foi utilizado um componente que automatiza todo o gerenciamento e, segundo um template que eu defini, a paginação trabalha da melhor forma possível.
+
+### Máscaras
+
+> Tive de utilizar dois componentes distintos relacionados à máscaras; Um deles genérico, onde eu informo o pattern que valida e outro específico para moeda nacional. Por menos otimizado que seja, irei manter assim para garantir o prazo e qualidade pro usuário.
 
