@@ -34,9 +34,7 @@ app.factory('HelperService', function() {
 				closeOnConfirm: true,
 				confirmButtonText: "Fechar"
 			});
-		},
-
-		showMensagemOk: {}
+		}
 	};
 
 	return helper;
