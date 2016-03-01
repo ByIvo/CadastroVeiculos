@@ -8,6 +8,27 @@
 
 > bower  ^1.3.12
 
+### Rodando o projeto
+
+> Para testar localmente, você precisará de um servidor web por causa do ngRoute. 
+> Você pode simplesmente utilizar o servidor do python executando:
+
+```shell
+python -m SimpleHTTPServer [porta]
+```
+> Porém recomendo a utilização do simple http server do node, facilmente instalado executando:
+
+```shell
+sudo npm install http-server
+```
+
+> Depois de instalado, basta executar o comando na pasta que deseja servir:
+
+```shell
+http-server -p [porta]
+```
+> O projeto estará disponível no link: http://localhost:[porta]
+
 ## Setup de desenvolvimento
 
 ### Instalar dependências
