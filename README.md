@@ -54,3 +54,6 @@ grunt dist
 
 > Tive de utilizar dois componentes distintos relacionados à máscaras; Um deles genérico, onde eu informo o pattern que valida e outro específico para moeda nacional. Por menos otimizado que seja, irei manter assim para garantir o prazo e qualidade pro usuário.
 
+### Modais
+
+> Resolvi utilizar o sweet alert para desenvolver as modais; Ele é muito lindo e prático, porém um pé no mato pra adicionar os estilos. Quando a popup é criada, os background-color dos botões são inseridos como estilo inline na tag, que por consequência, não basta apenas importar os estilos padrões .ca-btn e .ca-btn-primary para agregar novo estilo. Precisei usar !important nas cores para que tudo funcionasse.
