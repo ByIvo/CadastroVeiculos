@@ -21,7 +21,7 @@ app.factory('HelperService', function() {
 			});
 		},
 
-		showMensagemErro: function(mensagem, acao) {
+		showMensagemErro: function(mensagem) {
 			
 		swal({
 				title: "Ops...",   
@@ -33,8 +33,6 @@ app.factory('HelperService', function() {
 				customClass: 'ca-popup',
 				closeOnConfirm: true,
 				confirmButtonText: "Fechar"
-			}, function(){   
-				if(acao) acao();
 			});
 		},
 

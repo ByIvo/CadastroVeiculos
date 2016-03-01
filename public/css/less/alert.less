@@ -1,0 +1,55 @@
+.ca-popup {
+	padding: 0;
+	border: 1px solid @color-blue-light;
+	border-radius: 3px;
+
+	h2 {
+		margin: 14px 0;
+		font-size: 16px;
+		border-bottom: 1px solid @color-blue-light;
+		font-weight: 600;
+		color: @color-blue-dark;
+	}
+
+	p {
+		display: block;
+		border-bottom: 1px solid @color-blue-light;
+		padding: 44px 0;
+		color: @color-blue-dark;
+	}
+
+	.sa-button-container {
+		padding: 25px 0;
+		background-color: @color-gray-semi-light;
+		text-align: right;
+
+
+
+		button {
+			margin: 0 15px;
+			.ca-btn;
+
+			&.cancel {
+				.ca-btn-default;
+				background-color: @color-grey-semi-light !important;
+
+				position: absolute;
+				left: 0x;
+
+				&:hover {
+					background-color: @color-white-hover !important;
+				}
+			}
+
+			&.confirm {
+
+				.ca-btn-primary;
+				background-color: @color-green-semi-dark !important;
+
+				&:hover {
+					background-color: @color-green-semi-dark-hover !important;
+				}
+			}
+		}
+	}
+}

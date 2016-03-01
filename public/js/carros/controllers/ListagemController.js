@@ -45,7 +45,7 @@ app.controller('CarroListagemController',
 			if(Object.keys(SelecaoService.objetos).length === 0) {
 				HelperService.showMensagemErro('Você precisa selecionar ao menos um carro :)');
 			}else {
-				HelperService.showMensagemConfirmacao("Ao deletar um arquivo, ele não poderá mais ser recuperado.", function() {
+				HelperService.showMensagemConfirmacao("Se você excluir um carro, ele não poderá mais ser recuperado!", function() {
 					CarroService.removerSelecionados().then(function(carroRestantes){
 						$scope.carros = carroRestantes;
 					});

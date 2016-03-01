@@ -39,7 +39,7 @@ app.controller('CarroController',
 				}
 
 			}else {
-				alert('Form Inválido!!!');
+				HelperService.showMensagemErro('Formulário inválido!\n Por favor, preencha de acordo com o especificado.');
 			}
 		};
 	}]);
