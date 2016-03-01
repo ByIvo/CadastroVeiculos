@@ -7,7 +7,7 @@ app.factory('HelperService', function() {
 
 		showMensagemConfirmacao: function(mensagem, acao) {
 			swal({
-				title: "Você tem certeza?",   
+				title: "Você tem certeza?", 
 				text: mensagem,
 				allowEscapeKey: true,   
 				showCancelButton: true,

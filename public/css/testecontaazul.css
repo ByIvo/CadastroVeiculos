@@ -8,6 +8,11 @@
   font-style: normal;
   src: url("../fonts/proxima-nova/proximanovacond-regular.eot") format("embedded-opentype"), url("../fonts/proxima-nova/proximanovacond-regular.woff") format("woff"), url("../fonts/proxima-nova/proximanovacond-regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
+}
 * {
   -webkit-font-smoothing: antialiased;
 }
@@ -528,7 +533,7 @@ h5.ca-page-title {
   background-color: #F1F4F9;
   background-color: #F1F4F9 !important;
   position: absolute;
-  left: 0x;
+  left: 0px;
 }
 .ca-popup .sa-button-container button.cancel:hover {
   background-color: rgba(255, 255, 255, 0.8);
