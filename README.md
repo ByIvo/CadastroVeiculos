@@ -37,7 +37,7 @@ grunt dist
 
 ## Rodando o projeto
 
-> Para testar localmente, você precisará de um servidor web por causa do ngRoute. 
+> Para testar localmente, você precisará de um servidor web. 
 > Você pode simplesmente utilizar o servidor do python executando:
 
 ```shell
