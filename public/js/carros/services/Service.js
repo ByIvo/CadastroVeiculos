@@ -28,12 +28,18 @@
 	];
 
 	var carroEdicao = {};
+	var mensagem = '';
 
 	SelecaoService.key = function(carro) {
 		return carro.placa;
 	};
 
 	var carroService = {
+
+		mensagem: function() {
+			return mensagem;
+		},
+
 		all: function() {
 			return $q.when(carros);
 		},
@@ -86,15 +92,20 @@
 		},
 
 		removerCarro: function(carro) {
-			return _.reject(carros, function(carroLista) {
+			carros = _.reject(carros, function(carroLista) {
 				return HelperService.isCarroIgual(carro, carroLista);
 			});
+
+			mensagem = "Carro removido com sucesso!";
+
+			return carros;
 		},
 
 		salvarCarro: function(carro) {
 			return this.validarPromiseCarro(carro, function(deferred) {
 				carros.push(carro);
-				deferred.resolve('Carro gravado com sucesso!');
+				mensagem = 'Carro gravado com sucesso!';
+				deferred.resolve(mensagem);
 			});
 		},
 
